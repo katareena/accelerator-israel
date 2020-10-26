@@ -9,18 +9,18 @@ html {
 }
 
 body {
-  font-family: "Open Sans", "Tahoma", sans-serif;
+  font-family: "Fira Sans", "Tahoma", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: calc(32 / 16);
-  color: $dark-5;
-  background-color: $light-1;
+  font-size: 15px;
+  line-height: calc(26 / 15);
+  color: $text;
+  background-color: $white;
   width: 100%;
   min-height: 100%;
   margin: 0;
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    line-height: 2;
+    line-height: 1.73;
   }
 }
 
@@ -43,4 +43,5 @@ img {
 
 a {
   text-decoration: none;
+  color: $text;
 }
