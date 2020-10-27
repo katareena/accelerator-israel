@@ -7,3 +7,27 @@
 @mixin text-reset {
   margin: 0;
 }
+
+@mixin button-close {
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    content: "";
+    height: 22px;
+    width: 2px;
+    background: $gradient;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    content: "";
+    height: 22px;
+    width: 2px;
+    background: $gradient;
+    transform: rotate(-45deg);
+  }
+}

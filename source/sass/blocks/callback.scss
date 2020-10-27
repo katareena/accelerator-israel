@@ -1,0 +1,112 @@
+.callback {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(235, 235, 235, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  // display: none;
+}
+
+.callback__form {
+  width: 480px;
+  background-color: $white;
+  border-radius: 8px;
+  padding-top: 56px;
+  padding-left: 48px;
+  padding-right: 72px;
+  padding-bottom: 40px;
+  position: fixed;
+  top: 8.1vh;
+  left: calc(50vw - 240px);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.callback__title {
+  @include text-reset;
+  font-family: "Montserrat", "Tahoma", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: calc(34 / 28);
+  letter-spacing: -0.02em;
+  color: $title;
+  margin-bottom: 16px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.21;
+  }
+}
+
+.callback__description {
+  @include text-reset;
+  width: 358px;
+  margin-bottom: 32px;
+}
+
+.callback__item {
+  margin-bottom: 8px;
+}
+
+.callback__input {
+  font-family: "Fira Sans", "Tahoma", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: calc(20 / 17);
+  text-transform: uppercase;
+  color: rgba($text, 0.5);
+  width: 360px;
+  height: 59px;
+  border: 2px solid $basic-decor;
+  border-radius: 80px;
+  padding: 19px 40px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.18;
+  }
+}
+
+.callback__button {
+  margin-left: 60px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  display: inline-block;
+  width: 264px;
+  height: 59px;
+  padding: 19px 61px;
+  font-weight: 500;
+  // font-size: 17px;
+  font-size: 12px;
+  line-height: calc(20 / 17);
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  vertical-align: top;
+  // text-decoration: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  background: $gradient;
+  border-radius: 80px;
+  border: none;
+  cursor: pointer;
+}
+
+.callback__close {
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+
+  @include button-close;
+}
+
+.callback__checkbox-label {
+  font-size: 13px;
+  line-height: calc(19 / 10);
+  color: rgba($text, 0.74);
+}
