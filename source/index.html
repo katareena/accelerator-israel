@@ -13,7 +13,7 @@
     <link rel="preload" href="fonts/raleway-v18-latin_cyrillic-800.woff2" type="font/woff2" as="font">
     <link rel="preload" href="fonts/raleway-v18-latin_cyrillic-900.woff2" type="font/woff2" as="font">
     <link rel="preload" crossorigin="anonymous" href="fonts/fira-sans-v10-latin_cyrillic-regular.woff" type="font/woff" as="font">
-    <link rel="preload" crossorigin="anonymous" href="fonts/fira-sans-v10-latin_cyrillic-300.woff" type="font/woff" as="font">
+    <link rel="preload" crossorigin="anonymous" href="fonts/fira-sans-v10-latin_cyrillic-500.woff" type="font/woff" as="font">
     <link rel="preload" crossorigin="anonymous" href="fonts/fira-sans-v10-latin_cyrillic-700.woff" type="font/woff" as="font">
     <link rel="preload" crossorigin="anonymous" href="fonts/montserrat-v15-latin_cyrillic-700.woff" type="font/woff" as="font">
     <link rel="preload" crossorigin="anonymous" href="fonts/raleway-v18-latin_cyrillic-800.woff" type="font/woff" as="font">
@@ -44,11 +44,11 @@
         <p class="callback__description">Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
         <div class="callback__item">
           <label class="visually-hidden" for="user-name">Имя</label>
-          <input class="callback__input field" id="user-name" name="callback-name" placeholder="Имя" type="text" >
+          <input class="callback__input field" id="user-name" name="callback-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required>
         </div>
         <div class="callback__item">
           <label class="visually-hidden" for="user-phone">Телефон</label>
-          <input class="callback__input field" id="user-phone" name="callback-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" >
+          <input class="callback__input field" id="user-phone" name="callback-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required>
         </div>
 
         <button class="callback__button button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>

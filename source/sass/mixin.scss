@@ -18,6 +18,11 @@
     width: 2px;
     background: $gradient;
     transform: rotate(45deg);
+
+    @media (max-width: $mobile-width) {
+      top: -10px;
+      right: 0;
+    }
   }
 
   &::after {
@@ -29,5 +34,10 @@
     width: 2px;
     background: $gradient;
     transform: rotate(-45deg);
+
+    @media (max-width: $mobile-width) {
+      top: -10px;
+      right: 0;
+    }
   }
 }

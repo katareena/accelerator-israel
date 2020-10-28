@@ -6,7 +6,11 @@
   top: 0;
   left: 0;
   z-index: 5000;
-  // display: none;
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    height: auto;
+  }
 }
 
 .callback__form {
@@ -18,11 +22,27 @@
   padding-right: 72px;
   padding-bottom: 40px;
   position: fixed;
-  top: 8.1vh;
+  top: 15vh; //8.1vh;
   left: calc(50vw - 240px);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  box-shadow: 0 3px 12px rgba($black, 0.1);
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    min-width: 320px;
+    max-width: 767px;
+    min-height: 768px;
+    border-radius: 0;
+    padding-top: 168px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 169px;
+    top: 0;
+    left: 0;
+    // left: calc(50vw - 160px);
+  }
 }
 
 .callback__title {
@@ -38,12 +58,32 @@
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     line-height: 1.21;
   }
+
+  @media (max-width: $mobile-width) {
+    font-size: 24px;
+    line-height: calc(29 / 24);
+    width: 287px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
 }
 
 .callback__description {
   @include text-reset;
   width: 358px;
   margin-bottom: 32px;
+
+  @media (max-width: $mobile-width) {
+    width: 255px;
+    text-align: center;
+    font-size: 14px;
+    line-height: calc(22 / 14);
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
 }
 
 .callback__item {
@@ -52,44 +92,65 @@
 
 .callback__input {
   font-family: "Fira Sans", "Tahoma", sans-serif;
-  font-weight: 500;
-  font-size: 17px;
+  font-weight: 600;
+  font-size: 14px;
   line-height: calc(20 / 17);
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: rgba($text, 0.5);
   width: 360px;
   height: 59px;
   border: 2px solid $basic-decor;
   border-radius: 80px;
-  padding: 19px 40px;
+  padding: 19px 39px;
+  padding-top: 21px;
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     line-height: 1.18;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+    display: block;
+    margin: 0 auto;
   }
 }
 
 .callback__button {
   margin-left: 60px;
   margin-top: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   display: inline-block;
   width: 264px;
   height: 59px;
   padding: 19px 61px;
-  font-weight: 500;
-  // font-size: 17px;
-  font-size: 12px;
+  font-weight: 700;
+  font-size: 13px;
   line-height: calc(20 / 17);
+  letter-spacing: 0.3px;
   text-align: center;
   text-transform: uppercase;
   color: $white;
   vertical-align: top;
-  // text-decoration: none;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   background: $gradient;
   border-radius: 80px;
   border: none;
   cursor: pointer;
+
+  @media (max-width: $mobile-width) {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+}
+
+.callback__checkbox {
+  @media (max-width: $mobile-width) {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .callback__close {
@@ -107,6 +168,150 @@
 
 .callback__checkbox-label {
   font-size: 13px;
-  line-height: calc(19 / 10);
+  line-height: calc(20 / 13);
   color: rgba($text, 0.74);
+
+  display: block;
+  width: 270px;
+  margin-left: 60px;
+
+  @media (max-width: $mobile-width) {
+    margin-left: 13px;
+  }
+}
+
+.callback__checkbox-input:checked,
+.callback__checkbox-input:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.callback__checkbox-input:checked + .callback__checkbox-label,
+.callback__checkbox-input:not(:checked) + .callback__checkbox-label {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+
+  // @media (min-width: @tablet-width) {
+  //   padding-left: 55px;
+  //   line-height: 38px;
+  // }
+
+  // @media (min-width: @desktop-width) {
+  //   padding-left: 59px;
+  // }
+}
+
+.callback__checkbox-input:checked + .callback__checkbox-label::before,
+.callback__checkbox-input:not(:checked) + .callback__checkbox-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $accent-decor;
+  border-radius: 2px;
+
+  // @media (min-width: @tablet-width) {
+  //   width: 40px;
+  //   height: 40px;
+  // }
+}
+
+.callback__checkbox-input:checked:hover + .callback__checkbox-label::before,
+.callback__checkbox-input:not(:checked):hover + .callback__checkbox-label::before {
+  border: 2px solid rgba($accent-decor, 0.4);
+}
+
+.callback__checkbox-input:checked:active + .callback__checkbox-label,
+.callback__checkbox-input:not(:checked):active + .callback__checkbox-label {
+  transition: none;
+}
+
+// .callback__checkbox-input:checked:focus + .callback__checkbox-label::before,
+// .callback__checkbox-input:not(:checked):focus + .callback__checkbox-label::before {
+//   // border: 2px solid rgba($accent-decor);
+// }
+
+
+.callback__checkbox-input:checked + .callback__checkbox-label::after,
+.callback__checkbox-input:not(:checked) + .callback__checkbox-label::after {
+  content: "";
+  position: absolute;
+  transition: all 0.2s ease;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 10px;
+  border-radius: 1px;
+  border-left: 2px solid rgba($text, 0.74);
+  border-bottom: 2px solid rgba($text, 0.74);
+  transform: rotate(-45deg);
+
+  // @media (min-width: @tablet-width) {
+  //   top: 8px;
+  //   width: 30px;
+  //   height: 15px;
+  // }
+}
+
+.callback__checkbox-input:not(:checked) + .callback__checkbox-label::after {
+  opacity: 0;
+}
+
+.callback__checkbox-input:checked + .callback__checkbox-label::after {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.callback-open {
+  display: block;
+  animation-name: bounce;
+  animation-duration: 0.6s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.callback-error {
+  animation-name: shake;
+  animation-duration: 0.6s;
 }
