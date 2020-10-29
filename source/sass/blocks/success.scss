@@ -1,0 +1,115 @@
+.success {
+  @include modal;
+  display: none;
+  z-index: 5000;
+}
+
+.success--open {
+  display: block;
+}
+
+.success__inner {
+  @include modal-form;
+  padding-top: 216px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 112px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 120px;
+    right: 204px;
+    width: 72px;
+    height: 66px;
+    background-image: url("../img/ok-checkmark.svg");
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 296px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 292px;
+
+    &::before {
+      top: 200px;
+      left: calc(50vw - 34px);
+    }
+  }
+
+  // ok-checkmark на css
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 120px;
+  //   right: 206px;
+  //   width: 66px;
+  //   height: 66px;
+  //   background: #ffffff;
+  //   border-radius: 50%;
+  //   border: 5px solid $accent-decor;
+  // }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 120px;
+  //   right: 206px;
+  //   width: 50px;
+  //   height: 30px;
+  //   border-radius: 1px;
+  //   border-left: 5px solid $accent-decor;
+  //   border-bottom: 5px solid $accent-decor;
+  //   transform: rotate(-45deg);
+  // }
+}
+
+.success__title {
+  @include title;
+  font-size: 28px;
+  line-height: calc(34 / 28);
+
+  @include blockToCenter;
+  margin-bottom: 16px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.21;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 24px;
+    line-height: calc(29 / 24);
+  }
+}
+
+.success__message {
+  @include text-reset;
+  text-align: center;
+
+  @include blockToCenter;
+  width: 287px;
+  margin-bottom: 32px;
+
+  @media (max-width: $mobile-width) {
+    font-size: 14px;
+    line-height: calc(22 / 14);
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      line-height: 1.57;
+    }
+  }
+}
+
+.success__button {
+  width: 264px;
+  height: 59px;
+
+  @include blockToCenter;
+  @include button;
+}
+
+.success__close {
+  @include button-close;
+}

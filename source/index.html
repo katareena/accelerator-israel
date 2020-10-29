@@ -34,7 +34,37 @@
       <a class="header__about" href="#about"></a>
     </header>
 
-    <main id="about"></main>
+    <main class="main">
+      <section class="about" id="about">
+        <h2>О программе</h2>
+        <p>«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут. Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле. В течение освоения программ предусмотрен грант от 4200 до 8400&#36;.</p>
+
+        <div class="about__inner">
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/video-bicycle-mobile@1x.webp 1x, img/video-bicycle-mobile@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1023px)" srcset="img/video-bicycle-tablet@1x.webp 1x, img/video-bicycle-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/video-bicycle-desctop@1x.webp 1x, img/video-bicycle-desctop@2x.webp 2x">
+
+            <!-- 1х: 288px; 2x: 576px -->
+            <source media="(max-width: 767px)" srcset="img/video-bicycle-mobile@1x.jpg 1x, img/video-bicycle-mobile@2x.jpg 2x">
+            <!-- 1х: 503px; 2x: 1006px -->
+            <source media="(max-width: 1023px)" srcset="img/video-bicycle-tablet@1x.jpg 1x, img/video-bicycle-tablet@2x.jpg 2x">
+            <!-- 1х: 929px; 2x: 1858px -->
+            <img src="img/video-bicycle-desctop@1x.jpg" srcset="img/video-bicycle-desctop@2x.jpg 2x" loading="lazy" width="929" height="522" alt="Видео о программе">
+          </picture>
+
+          <button class="about__button" type="button" aria-label="Воспроизвести видео">
+            <!-- <svg class="about__play" width="65" height="65" viewBox="0 0 65 65" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M32.5 65C50.4493 65 65 50.4493 65 32.5C65 14.5507 50.4493 0 32.5 0C14.5507 0 0 14.5507 0 32.5C0 50.4493 14.5507 65 32.5 65Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6001 23.3999L41.6001 32.4999L28.6001 41.5999V23.3999Z" fill="#070707"/>
+            </svg> -->
+          </button>
+        </div>
+      </section>
+
+      <div class="div"></div>
+
+    </main>
 
     <footer></footer>
 
@@ -51,15 +81,25 @@
           <input class="callback__input field" id="user-phone" name="callback-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required>
         </div>
 
-        <button class="callback__button button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>
+        <button class="callback__button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>
         <div class="callback__checkbox">
           <input class="callback__checkbox-input" type="checkbox" name="personal-data" id="user-personal-data">
           <label class="callback__checkbox-label" for="user-personal-data">Нажимая на кнопку, вы даёте согласие на обработку персональных данных</label>
         </div>
         <button class="callback__close" type="button" aria-label="Закрыть форму"></button>
       </form>
-
     </section>
+
+    <!-- <template id="success"> -->
+      <div class="success">
+        <div class="success__inner">
+          <h2 class="success__title">Заявка принята</h2>
+          <p class="success__message">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+          <button class="success__button" type="submit" aria-label="Понятно">Понятно</button>
+          <button class="success__close" type="button" aria-label="Закрыть форму"></button>
+        </div>
+      </div>
+    <!-- </template> -->
 
     <script src="js/vendor.js" defer></script>
     <script src="js/main.js" defer></script>
