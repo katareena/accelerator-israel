@@ -16,6 +16,7 @@ var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
 var del = require('del');
 var concat = require('gulp-concat');
+var imgCompress  = require('imagemin-jpeg-recompress');
 
 gulp.task('clean', function () {
   return del('build');
@@ -43,6 +44,12 @@ gulp.task('copy', function () {
 gulp.task('images', function () {
   return gulp.src('source/img/**/*.{png,jpg,svg}')
       .pipe(imagemin([
+        imgCompress({
+          loops: 4,
+          min: 70,
+          max: 80,
+          quality: 'high'
+        }),
         imagemin.optipng({optimizationLevel: 7}),
         imagemin.jpegtran({progressive: true}),
         imagemin.svgo()
