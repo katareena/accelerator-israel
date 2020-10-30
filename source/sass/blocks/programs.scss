@@ -1,0 +1,102 @@
+.programs {
+  // width: 100%;
+  // min-width: 1024px;
+  // max-width: 1366px;
+  width: 945px;
+  padding-top: 107px;
+  height: 530px;
+  margin: 0 auto;
+
+  background-image: url("../img/sketch-bg-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/sketch-bg-desktop@2x.jpg");
+    background-size: contain;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-width: 320px;
+    max-width: 767px;
+    height: 580px;
+    padding-top: 0;
+
+    background-image: url("../img/sketch-bg-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    // background-position: center;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/sketch-bg-mobile@2x.jpg");
+      background-size: contain;
+    }
+  }
+
+  // почему-то не работате:
+  // .programs h2 {
+  //   @include title;
+  //   font-size: 40px;
+  //   line-height: calc(49 / 40);
+  //   margin: 0;
+  //   margin-bottom: 83px;
+  // }
+
+  .programs__title {
+    @include title;
+    font-size: 40px;
+    line-height: calc(49 / 40);
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 65px;
+  }
+
+  .programs__inner {
+    display: flex;
+  }
+
+  .programs__tab {
+    width: 230px;
+    margin-right: 62px;
+  }
+
+  .programs__tab button {
+    width: 228px;
+    height: 68px;
+    margin-bottom: 4px;
+    border: none;
+    background-color: transparent;
+  }
+
+  .select {
+    background: $gradient;
+    // transform: matrix(1, 0, 0, -1, 0, 0);
+    // -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+    // -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+    // -o-transform: matrix(1, 0, 0, -1, 0, 0);
+    // -moz-transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  .programs__box {
+    padding-top: 18px;
+  }
+
+  .programs__item {
+    display: none;
+  }
+
+  .programs__item.active {
+    display: block;
+  }
+
+  .programs__item h3 {
+    @include title;
+    font-size: 28px;
+    line-height: calc(34 / 28);
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  .programs__item p {
+    width: 550px;
+  }
+}

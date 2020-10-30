@@ -30,36 +30,82 @@
         <a class="header__tel" href="+97226216581">+ (972) 2 – 621 – 6581</a>
         <a class="header__callback" href="#">заказать звонок</a>
       </div>
-      <h1 class="header__title">Учёба, путешествие и карьера для еврейской молодёжи</h1>
+      <h1>Учёба, путешествие и карьера для еврейской молодёжи</h1>
       <a class="header__about" href="#about"></a>
     </header>
 
     <main class="main">
+
       <section class="about" id="about">
         <h2>О программе</h2>
         <p>«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут. Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле. В течение освоения программ предусмотрен грант от 4200 до 8400&#36;.</p>
 
-        <div class="about__inner">
+        <div class="about__video">
           <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcset="img/video-bicycle-mobile@1x.webp 1x, img/video-bicycle-mobile@2x.webp 2x">
-            <source type="image/webp" media="(max-width: 1023px)" srcset="img/video-bicycle-tablet@1x.webp 1x, img/video-bicycle-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/video-bicycle-desctop@1x.webp 1x, img/video-bicycle-desctop@2x.webp 2x">
-
-            <!-- 1х: 288px; 2x: 576px -->
-            <source media="(max-width: 767px)" srcset="img/video-bicycle-mobile@1x.jpg 1x, img/video-bicycle-mobile@2x.jpg 2x">
-            <!-- 1х: 503px; 2x: 1006px -->
-            <source media="(max-width: 1023px)" srcset="img/video-bicycle-tablet@1x.jpg 1x, img/video-bicycle-tablet@2x.jpg 2x">
-            <!-- 1х: 929px; 2x: 1858px -->
-            <img src="img/video-bicycle-desctop@1x.jpg" srcset="img/video-bicycle-desctop@2x.jpg 2x" loading="lazy" width="929" height="522" alt="Видео о программе">
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/video-mobile@1x-c.webp 1x, img/video-mobile@2x-c.webp 2x">
+            <source type="image/webp" srcset="img/video-desktop@1x-c.webp 1x, img/video-desktop@2x-c.webp 2x">
+            <!-- 1х: 320px; 2x: 640px -->
+            <source media="(max-width: 767px)" srcset="img/video-mobile@1x-c.jpg 1x, img/video-mobile@2x-c.jpg 2x">
+            <!-- 1х: 870px; 2x: 1740px -->
+            <img src="img/video-desktop@1x-c.jpg" srcset="img/video-desktop@2x-c.jpg 2x" loading="lazy" width="870" height="460" alt="Видео о программе">
           </picture>
 
           <button class="about__button" type="button" aria-label="Воспроизвести видео">
-            <!-- <svg class="about__play" width="65" height="65" viewBox="0 0 65 65" aria-hidden="true">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M32.5 65C50.4493 65 65 50.4493 65 32.5C65 14.5507 50.4493 0 32.5 0C14.5507 0 0 14.5507 0 32.5C0 50.4493 14.5507 65 32.5 65Z"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6001 23.3999L41.6001 32.4999L28.6001 41.5999V23.3999Z" fill="#070707"/>
-            </svg> -->
+            <svg width="96" height="96" aria-hidden="true">
+              <circle opacity=".32" cx="48" cy="48" r="48" fill="#fff"/>
+              <circle class="about__circle" cx="48" cy="48" r="32"/>
+              <path class="about__triangle" d="M58 47.5L43 57V38l15 9.5z"/>
+            </svg>
           </button>
         </div>
+      </section>
+
+      <section class="programs">
+        <h2 class="programs__title">Программы</h2>
+
+        <div class="programs__inner">
+          <div class="programs__tab" id="tabs">
+            <button class="" id="tab" type="button" data-program="general">Общие</button>
+            <button class="select" id="tab" type="button" data-program="academic">Академические</button>
+            <button class="" id="tab" type="button" data-program="internships">Стажировки</button>
+            <button class="" id="tab" type="button" data-program="volunteerism">Волонтерство</button>
+            <button class="" id="tab" type="button" data-program="religious">Религиозные</button>
+          </div>
+
+          <div class="programs__box">
+            <div class="programs__item" id="general">
+              <h3>Общие</h3>
+              <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+              <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+            </div>
+
+            <div class="programs__item active" id="academic">
+              <h3>Академические</h3>
+              <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+              <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+            </div>
+
+            <div class="programs__item" id="internships">
+              <h3>Стажировки</h3>
+              <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+              <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+            </div>
+
+            <div class="programs__item" id="volunteerism">
+              <h3>Волонтерство</h3>
+              <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+              <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+            </div>
+
+            <div class="programs__item" id="religious">
+              <h3>Религиозные</h3>
+              <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+              <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+            </div>
+          </div>
+
+        </div>
+
       </section>
 
       <div class="div"></div>
@@ -70,15 +116,15 @@
 
     <section class="callback">
       <form class="callback__form" method="post" action="https://echo.htmlacademy.ru">
-        <h2 class="callback__title">Заказать звонок</h2>
-        <p class="callback__description">Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
+        <h2>Заказать звонок</h2>
+        <p>Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
         <div class="callback__item">
           <label class="visually-hidden" for="user-name">Имя</label>
-          <input class="callback__input field" id="user-name" name="callback-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required>
+          <input id="user-name" name="callback-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required>
         </div>
         <div class="callback__item">
           <label class="visually-hidden" for="user-phone">Телефон</label>
-          <input class="callback__input field" id="user-phone" name="callback-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required>
+          <input id="user-phone" name="callback-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required>
         </div>
 
         <button class="callback__button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>

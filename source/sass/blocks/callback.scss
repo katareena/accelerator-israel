@@ -18,7 +18,7 @@
   }
 }
 
-.callback__title {
+.callback__form h2 {
   @include title;
   font-size: 28px;
   line-height: calc(34 / 28);
@@ -39,7 +39,7 @@
   }
 }
 
-.callback__description {
+.callback__form p {
   @include text-reset;
   width: 358px;
   margin-bottom: 32px;
@@ -63,7 +63,7 @@
   margin-bottom: 8px;
 }
 
-.callback__input {
+.callback__form input {
   font-family: "Fira Sans", "Tahoma", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -74,7 +74,6 @@
   width: 360px;
   height: 59px;
   border: 2px solid $basic-decor;
-  // border: 2px solid transparent;
   border-radius: 80px;
   padding: 19px 39px;
   padding-top: 21px;
@@ -91,18 +90,6 @@
     @include blockToCenter;
   }
 }
-
-// .callback__form input::after:focus {
-//   content: "";
-//   position: absolute;
-//   top: -2px;
-//   bottom: -2px;
-//   left: -2px;
-//   right: -2px;
-// 	background: linear-gradient(gold, red);
-// 	border-radius: 80px;
-//   z-index: -1;
-// }
 
 .callback__form input:focus {
   border: 2px solid $accent-decor;
@@ -143,7 +130,7 @@
   @include button-close;
 }
 
-.callback__checkbox-label {
+.callback__checkbox label {
   font-size: 13px;
   line-height: calc(20 / 13);
   color: rgba($text, 0.74);
@@ -152,27 +139,22 @@
   width: 270px;
   margin-left: 60px;
 
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+
   @media (max-width: $mobile-width) {
     margin-left: 13px;
   }
 }
 
-.callback__checkbox-input:checked,
-.callback__checkbox-input:not(:checked) {
+.callback__checkbox input:checked,
+.callback__checkbox input:not(:checked) {
   position: absolute;
   left: -9999px;
 }
 
-.callback__checkbox-input:checked + .callback__checkbox-label,
-.callback__checkbox-input:not(:checked) + .callback__checkbox-label {
-  display: inline-block;
-  position: relative;
-  padding-left: 24px;
-  cursor: pointer;
-}
-
-.callback__checkbox-input:checked + .callback__checkbox-label::before,
-.callback__checkbox-input:not(:checked) + .callback__checkbox-label::before {
+.callback__checkbox label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -183,24 +165,16 @@
   border-radius: 2px;
 }
 
-.callback__checkbox-input:checked:hover + .callback__checkbox-label::before,
-.callback__checkbox-input:not(:checked):hover + .callback__checkbox-label::before {
+.callback__checkbox label:hover::before {
   border: 2px solid rgba($accent-decor, 0.4);
-}
-
-.callback__checkbox-input:checked:active + .callback__checkbox-label,
-.callback__checkbox-input:not(:checked):active + .callback__checkbox-label {
-  transition: none;
 }
 
 .callback__checkbox-input:checked:focus + .callback__checkbox-label::before,
 .callback__checkbox-input:not(:checked):focus + .callback__checkbox-label::before {
-  border: 1px solid rgba($text, 0.74);
+  border: 2px solid rgba($text, 0.74);
 }
 
-
-.callback__checkbox-input:checked + .callback__checkbox-label::after,
-.callback__checkbox-input:not(:checked) + .callback__checkbox-label::after {
+.callback__checkbox label::after {
   content: "";
   position: absolute;
   transition: all 0.2s ease;
@@ -214,11 +188,11 @@
   transform: rotate(-45deg);
 }
 
-.callback__checkbox-input:not(:checked) + .callback__checkbox-label::after {
+.callback__checkbox input:not(:checked) + .callback__checkbox-label::after {
   opacity: 0;
 }
 
-.callback__checkbox-input:checked + .callback__checkbox-label::after {
+.callback__checkbox input:checked + .callback__checkbox-label::after {
   opacity: 1;
 }
 

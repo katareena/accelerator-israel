@@ -1,0 +1,129 @@
+.about {
+  width: 100%;
+  min-width: 1024px;
+  max-width: 1366px;
+  padding-top: 18px;
+  height: 780px;
+  margin: 0 auto;
+
+  background-image: url("../img/watercolor-bg-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/watercolor-bg-desktop@2x.jpg");
+    background-size: contain;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-width: 320px;
+    max-width: 767px;
+    height: 580px;
+    padding-top: 0;
+
+    background-image: url("../img/watercolor-bg-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/watercolor-bg-mobile@2x.jpg");
+      background-size: contain;
+    }
+  }
+}
+
+.about h2 {
+  @include title;
+  margin: 0;
+  font-size: 40px;
+  line-height: calc(49 / 40);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 24px;
+
+  @media (max-width: $mobile-width) {
+    font-size: 32px;
+    line-height: calc(39 / 32);
+  }
+}
+
+.about p {
+  @include blockToCenter;
+  width: 720px;
+  font-size: 17px;
+  line-height: calc(29 / 17);
+  text-align: center;
+  margin-bottom: 48px;
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+    font-size: 16px;
+    line-height: calc(26 / 16);
+    text-align: left;
+  }
+}
+
+.about__video {
+  width: 870px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: $mobile-width) {
+    width: 320px;
+  }
+}
+
+.about__video img {
+  width: 870px;
+  height: 460px;
+
+  @media (max-width: $mobile-width) {
+    width: 320px;
+    height: 224px;
+  }
+}
+
+.about__button {
+  border: none;
+  background-color: transparent;
+
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  top: calc(50% - 51px);
+  left: calc(50% - 56px);
+
+  cursor: pointer;
+  fill: currentColor;
+}
+
+.about__circle {
+  color: $white;
+
+  // @media (max-width: $mobile-width) {
+  // }
+}
+
+.about__triangle {
+  color: $play;
+}
+
+.about__button:hover svg > .about__triangle {
+  color: $play-hover;
+}
+
+.about__button:active svg > .about__circle {
+  color: $play-click;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.about__button svg {
+  width: 96px;
+  height: 96px;
+
+  @media (max-width: $mobile-width) {
+
+    width: 80px;
+    height: 80px;
+  }
+}

@@ -59,7 +59,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('webp', function () {
-  return gulp.src('source/img/**/*.{png,jpg}')
+  return gulp.src('source/img/**/*-c.{png,jpg}')
       .pipe(webp({quality: 90}))
       .pipe(gulp.dest('source/img'));
 });
