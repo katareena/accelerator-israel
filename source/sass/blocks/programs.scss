@@ -4,7 +4,7 @@
   // max-width: 1366px;
   width: 945px;
   padding-top: 107px;
-  height: 530px;
+  padding-bottom: 20px;
   margin: 0 auto;
 
   background-image: url("../img/sketch-bg-desktop@1x.jpg");
@@ -19,7 +19,6 @@
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
-    height: 580px;
     padding-top: 0;
 
     background-image: url("../img/sketch-bg-mobile@1x.jpg");
@@ -31,72 +30,158 @@
       background-size: contain;
     }
   }
+}
 
-  // почему-то не работате:
-  // .programs h2 {
-  //   @include title;
-  //   font-size: 40px;
-  //   line-height: calc(49 / 40);
-  //   margin: 0;
-  //   margin-bottom: 83px;
-  // }
+.programs h2 {
+  @include title;
+  font-size: 40px;
+  line-height: calc(49 / 40);
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 67px;
+}
 
-  .programs__title {
-    @include title;
-    font-size: 40px;
-    line-height: calc(49 / 40);
-    text-transform: uppercase;
-    margin: 0;
-    margin-bottom: 65px;
+.programs__inner {
+  display: flex;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
   }
+}
 
-  .programs__inner {
+.programs__tab {
+  width: 230px;
+  margin-right: 62px;
+
+  @media (max-width: $mobile-width) {
+    margin-left: -31px;
     display: flex;
   }
+}
 
-  .programs__tab {
-    width: 230px;
-    margin-right: 62px;
+.programs__tab button {
+  line-height: calc(18 / 15);
+  width: 228px;
+  height: 68px;
+  margin-bottom: 4px;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  padding-left: 72px;
+  position: relative;
+
+  @media (max-width: $mobile-width) {
+    width: 181px;
+    height: 48px;
+    padding-left: 52px;
   }
+}
 
-  .programs__tab button {
-    width: 228px;
-    height: 68px;
-    margin-bottom: 4px;
-    border: none;
-    background-color: transparent;
-  }
+// .programs__button--general::before {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 36px;
+//   height: 36px;
+//   background-image: url("../img/black-general.svg");
+//   background-repeat: no-repeat;
+// }
 
-  .select {
+// .programs__button--general:hover::before {
+//   background-image: url("../img/yellow-general.svg");
+//   background-repeat: no-repeat;
+// }
+
+// .programs__button--general:hover > span {
+//   color: red;
+// }
+
+
+//-----------------------------
+// .programs__tab button:hover,
+// .programs__tab button:focus {
+//   box-shadow: 0 0 0 1px $basic-decor;
+// }
+
+.select {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: calc(19 / 16);
+  text-transform: uppercase;
+  background: $gradient;
+  background-size: cover;
+  width: 228px;
+  height: 68px;
+  position: relative;
+  color: white;
+
+  @media (max-width: $mobile-width) {
     background: $gradient;
-    // transform: matrix(1, 0, 0, -1, 0, 0);
-    // -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
-    // -ms-transform: matrix(1, 0, 0, -1, 0, 0);
-    // -o-transform: matrix(1, 0, 0, -1, 0, 0);
-    // -moz-transform: matrix(1, 0, 0, -1, 0, 0);
+    border-radius: 80px;
+    border: none;
   }
+}
 
-  .programs__box {
-    padding-top: 18px;
-  }
+.select::before,
+.select::after {
+  content: "";
+  position: absolute;
+  color: currentColor;
+  right: 0;
+  border-left: 30px solid transparent;
 
-  .programs__item {
+  @media (max-width: $mobile-width) {
     display: none;
   }
+}
 
-  .programs__item.active {
+.select::before {
+  border-bottom: 35px solid currentColor;
+  bottom: 0;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.select::after {
+  top: 0;
+  border-top: 35px solid currentColor;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+//-----------------------------
+
+.programs__box {
+  width: 100vw;
+  padding-top: 18px;
+}
+
+.programs__item {
+  display: none;
+}
+
+.programs__item.active {
+  display: block;
+}
+
+.programs__item h3 {
+  @include title;
+  font-size: 28px;
+  line-height: calc(34 / 28);
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.programs__item p {
+  width: 550px;
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
     display: block;
-  }
-
-  .programs__item h3 {
-    @include title;
-    font-size: 28px;
-    line-height: calc(34 / 28);
-    margin: 0;
-    margin-bottom: 24px;
-  }
-
-  .programs__item p {
-    width: 550px;
+    margin: 0 auto;
   }
 }
