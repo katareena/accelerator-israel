@@ -64,21 +64,14 @@
 }
 
 .callback__form input {
-  font-family: "Fira Sans", "Tahoma", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: calc(20 / 17);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: rgba($text, 0.5);
   width: 360px;
   height: 59px;
-  border: 2px solid $basic-decor;
-  border-radius: 80px;
   padding: 19px 39px;
   padding-top: 21px;
   position: relative;
   background-clip: padding-box;
+
+  @include input;
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     line-height: 1.18;
@@ -143,6 +136,10 @@
   padding-left: 24px;
   cursor: pointer;
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.54;
+  }
+
   @media (max-width: $mobile-width) {
     margin-left: 13px;
   }
@@ -161,17 +158,19 @@
   top: 0;
   width: 16px;
   height: 16px;
-  border: 2px solid $accent-decor;
+  border: 2px solid transparent;
+  border-image: $gradient;
+  border-image-slice: 1;
   border-radius: 2px;
 }
 
 .callback__checkbox label:hover::before {
-  border: 2px solid rgba($accent-decor, 0.4);
+  opacity: 0.4;
 }
 
 .callback__checkbox-input:checked:focus + .callback__checkbox-label::before,
 .callback__checkbox-input:not(:checked):focus + .callback__checkbox-label::before {
-  border: 2px solid rgba($text, 0.74);
+  opacity: 0.4;
 }
 
 .callback__checkbox label::after {
@@ -183,8 +182,8 @@
   width: 20px;
   height: 10px;
   border-radius: 1px;
-  border-left: 2px solid rgba($text, 0.74);
-  border-bottom: 2px solid rgba($text, 0.74);
+  border-left: 2px solid;
+  border-bottom: 2px solid;
   transform: rotate(-45deg);
 }
 

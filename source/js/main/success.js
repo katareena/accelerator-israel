@@ -1,28 +1,20 @@
 'use strict';
 (function () {
   var ESCAPE = 'Escape';
-  var massege = document.querySelector('.success');
-  var buttonMassege = massege.querySelector('.success__button');
-  var closeMassege = massege.querySelector('.success__close');
+  var message = document.querySelector('.success');
+  var buttonMessage = message.querySelector('.success__button');
+  var closeMessage = message.querySelector('.success__close');
 
-  var closeMassegeHeandler = function (evt) {
+  var closeMessageHeandler = function (evt) {
     evt.preventDefault();
-    massege.classList.remove('success--open');
-    window.removeEventListener('keydown', window.success.closeMassegeEscHandler);
-    massege.removeEventListener('click', window.success.closeOverlayHandler);
-    closeMassege.removeEventListener('click', window.success.closeMassegeHeandler);
-    buttonMassege.removeEventListener('click', window.success.closeMassegeHeandler);
+    message.classList.remove('success--open');
   };
 
-  var closeMassegeEscHandler = function (evt) {
+  var closeMessageEscHandler = function (evt) {
     if (evt.key === ESCAPE) {
-      if (massege.classList.contains('success--open')) {
+      if (message.classList.contains('success--open')) {
         evt.preventDefault();
-        massege.classList.remove('success--open');
-        window.removeEventListener('keydown', window.success.closeMassegeEscHandler);
-        massege.removeEventListener('click', window.success.closeOverlayHandler);
-        closeMassege.removeEventListener('click', window.success.closeMassegeHeandler);
-        buttonMassege.removeEventListener('click', window.success.closeMassegeHeandler);
+        message.classList.remove('success--open');
       }
     }
   };
@@ -30,20 +22,37 @@
   var closeOverlayHandler = function (evt) {
     window.matchesForIE.changeMatchesForIE();
     if (!evt.target.matches('.success__inner, .success__inner *')) {
-      if (massege.classList.contains('success--open')) {
+      if (message.classList.contains('success--open')) {
         evt.preventDefault();
-        massege.classList.remove('success--open');
-        window.removeEventListener('keydown', window.success.closeMassegeEscHandler);
-        massege.removeEventListener('click', window.success.closeOverlayHandler);
-        closeMassege.removeEventListener('click', window.success.closeMassegeHeandler);
-        buttonMassege.removeEventListener('click', window.success.closeMassegeHeandler);
+        message.classList.remove('success--open');
       }
     }
   };
 
-  window.success = {
-    closeMassegeHeandler: closeMassegeHeandler,
-    closeMassegeEscHandler: closeMassegeEscHandler,
-    closeOverlayHandler: closeOverlayHandler
+  //--------
+  var intentionPhoneUser = document.querySelector('[name=user-phone]');
+
+  var submitHeandler = function (evt) {
+    evt.preventDefault();
+    if (intentionPhoneUser.value) {
+      message.classList.add('success--open');
+    }
   };
+
+  window.success = {
+    closeMessageHeandler: closeMessageHeandler,
+    closeMessageEscHandler: closeMessageEscHandler,
+    closeOverlayHandler: closeOverlayHandler,
+    submitHeandler: submitHeandler
+  };
+
+  window.addEventListener('keydown', window.success.closeMessageEscHandler);
+  message.addEventListener('click', window.success.closeOverlayHandler);
+  closeMessage.addEventListener('click', window.success.closeMessageHeandler);
+  buttonMessage.addEventListener('click', window.success.closeMessageHeandler);
+
+  var intentionForm = document.querySelector('.intention__form');
+  intentionForm.addEventListener('submit', window.success.submitHeandler);
+  intentionPhoneUser.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
+
 })();

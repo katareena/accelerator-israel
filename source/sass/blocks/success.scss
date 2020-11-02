@@ -37,33 +37,6 @@
       left: calc(50vw - 34px);
     }
   }
-
-  // ok-checkmark на css
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 120px;
-  //   right: 206px;
-  //   width: 66px;
-  //   height: 66px;
-  //   background: #ffffff;
-  //   border-radius: 50%;
-  //   border: 5px solid $accent-decor;
-  // }
-
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 120px;
-  //   right: 206px;
-  //   width: 50px;
-  //   height: 30px;
-  //   border-radius: 1px;
-  //   border-left: 5px solid $accent-decor;
-  //   border-bottom: 5px solid $accent-decor;
-  //   transform: rotate(-45deg);
-  // }
 }
 
 .success__title {

@@ -6,12 +6,12 @@
   var close = popup.querySelector('.callback__close');
   var form = popup.querySelector('.callback__form');
   var nameUser = popup.querySelector('[name=callback-name]');
-  var phoneUser = popup.querySelector('[name=callback-phone]');
+  var phoneUser = popup.querySelector('[name=user-phone]');
   var checkbox = document.querySelector('input[type=checkbox]');
 
-  var massege = document.querySelector('.success');
-  var buttonMassege = massege.querySelector('.success__button');
-  var closeMassege = massege.querySelector('.success__close');
+  var message = document.querySelector('.success');
+  var buttonMessage = message.querySelector('.success__button');
+  var closeMessage = message.querySelector('.success__close');
 
   var isStorageSupport = true;
   var storage = '';
@@ -45,12 +45,12 @@
         localStorage.setItem('nameUser', name.value);
         localStorage.setItem('phoneUser', name.value);
       }
-      massege.classList.add('success--open');
+      message.classList.add('success--open');
       window.modalCallback.closeForm();
-      window.addEventListener('keydown', window.success.closeMassegeEscHandler);
-      massege.addEventListener('click', window.success.closeOverlayHandler);
-      closeMassege.addEventListener('click', window.success.closeMassegeHeandler);
-      buttonMassege.addEventListener('click', window.success.closeMassegeHeandler);
+      window.addEventListener('keydown', window.success.closeMessageEscHandler);
+      message.addEventListener('click', window.success.closeOverlayHandler);
+      closeMessage.addEventListener('click', window.success.closeMessageHeandler);
+      buttonMessage.addEventListener('click', window.success.closeMessageHeandler);
     }
   };
 

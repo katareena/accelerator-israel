@@ -20,6 +20,7 @@
     max-width: 767px;
     height: 580px;
     padding-top: 0;
+    margin-bottom: 18px;
 
     background-image: url("../img/watercolor-bg-mobile@1x.jpg");
     background-repeat: no-repeat;
@@ -95,13 +96,14 @@
 
   cursor: pointer;
   fill: currentColor;
+
+  @media (max-width: $mobile-width) {
+    top: calc(50% - 45px);
+  }
 }
 
 .about__circle {
   color: $white;
-
-  // @media (max-width: $mobile-width) {
-  // }
 }
 
 .about__triangle {
@@ -118,12 +120,7 @@
 }
 
 .about__button svg {
-  width: 96px;
-  height: 96px;
-
   @media (max-width: $mobile-width) {
-
-    width: 80px;
-    height: 80px;
+    transform: scale(0.83);
   }
 }

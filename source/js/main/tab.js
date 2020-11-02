@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-  var tabLinks = document.querySelectorAll('#tab');
+  var tabLinks = document.querySelectorAll('.programs__button');
   var tabContent = document.querySelectorAll('.programs__item');
 
   function openTabs(elem) {
