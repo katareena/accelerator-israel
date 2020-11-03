@@ -1,0 +1,148 @@
+.description {
+  width: 100%;
+  min-width: 1024px;
+  max-width: 1366px;
+  padding-top: 193px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+
+.description__wrap {
+  width: 1024px;
+  padding-left: 529px;
+  margin: 0 auto;
+}
+
+.description__wrap h2 {
+  @include title;
+
+  font-size: 40px;
+  line-height: calc(49 / 40);
+  text-transform: uppercase;
+  margin-bottom: 23px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.23;
+  }
+}
+
+.description__wrap p {
+  opacity: 0.87;
+  margin-bottom: 32px;
+}
+
+.description__wrap h3 {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: calc(29 / 17);
+  margin-bottom: 8px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.71;
+  }
+}
+
+.description__wrap div {
+  width: 520px;
+  line-height: calc(21 / 15);
+  opacity: 0.5;
+  margin-left: 15px;
+  position: relative;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.4;
+  }
+}
+
+.description__wrap div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -18px;
+  width: 2px;
+  height: 42px;
+  background-color: $accent-decor;
+}
+
+.description__wrap div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -16px;
+  width: 2px;
+  height: 42px;
+  background-color: $accent-decor2;
+}
+
+.description__list {
+  line-height: calc(21 / 15);
+  opacity: 0.87;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.4;
+  }
+
+  list-style-type: none;
+  counter-reset: num;
+  position: relative;
+  padding: 15px 0 5px 0;
+  padding-left: 75px;
+  margin: 0;
+  margin-left: -32px;
+  margin-bottom: 8px;
+}
+
+.description__list li {
+  min-height: 40px;
+  position: relative;
+  margin: 0;
+  margin-bottom: 36px;
+  padding: 0;
+  line-height: 1.4;
+
+  display: flex;
+  align-items: center;
+}
+
+.description__list li::after {
+  content: counter(num);
+  counter-increment: num;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background: $white;
+  color: $accent-decor;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Вертикальная линия */
+.description__list::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 33px;
+  width: 1px;
+  border-left: 1px dashed rgba($text, 0.2);
+}
+
+/* Скрытие линии у последнего li */
+.description__list li:last-child::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -32px;
+  width: 10px;
+  height: 90px;
+  border-left: 1px dashed transparent;
+  background: $white;
+}
