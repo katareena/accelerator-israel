@@ -158,7 +158,7 @@
   background-image: url("../img/scroll-down.svg");
   background-repeat: no-repeat;
   position: absolute;
-  left: calc(50vw - 38px);
+  left: calc(50% - 38px);
   cursor: pointer;
 
   @media (max-width: $mobile-width) {

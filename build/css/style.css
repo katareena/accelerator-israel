@@ -266,7 +266,7 @@ a {
   background-image: url("../img/scroll-down.svg");
   background-repeat: no-repeat;
   position: absolute;
-  left: calc(50vw - 38px);
+  left: calc(50% - 38px);
   cursor: pointer; }
   @media (max-width: 767px) {
     .header__about {
@@ -616,6 +616,13 @@ a {
      border-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
   border-image-slice: 1;
   border-radius: 2px; }
+
+.callback__checkbox label:hover::before {
+  opacity: 0.4; }
+
+.callback__checkbox-input:checked:focus + .callback__checkbox-label::before,
+.callback__checkbox-input:not(:checked):focus + .callback__checkbox-label::before {
+  opacity: 0.4; }
 
 .callback__checkbox label::after {
   content: "";
@@ -981,17 +988,6 @@ a {
       height: 48px;
       padding-left: 52px;
       margin-right: 4px; } }
-
-.programs__button:hover {
-  background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .programs__button:hover {
-      -webkit-background-clip: text;
-              background-clip: text; } }
 
 .programs__button--general::before {
   content: "";
