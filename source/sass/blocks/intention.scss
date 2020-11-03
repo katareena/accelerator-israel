@@ -40,16 +40,17 @@
   top: 138px;
   left: 0;
   width: 167px;
-  height: 226px;
+  height: 250px;
   background-image: url("../img/backpack.jpg");
   background-repeat: no-repeat;
-  background-size: 167px 226px;
+  // background-size: cover;
+  background-size: 147px 260px;
   z-index: -1;
 
   @media (max-width: $mobile-width) {
     width: 120px;
-    height: 162px;
-    background-size: 100px 192px;
+    height: 180px;
+    background-size: 102px 192px;
     top: 5px;
   }
 }
