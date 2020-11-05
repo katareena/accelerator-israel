@@ -47,6 +47,10 @@
   border-radius: 80px;
   border: none;
   cursor: pointer;
+
+  &:active {
+    background: $button-click, $gradient;
+  }
 }
 
 @mixin button-close {

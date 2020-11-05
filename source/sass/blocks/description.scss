@@ -151,10 +151,10 @@
   }
 }
 
-.description__wrap div {
+.description__wrap p:last-child {
   width: 520px;
   line-height: calc(21 / 15);
-  opacity: 0.5;
+  color: rgba($text, 0.5);
   margin-left: 15px;
   position: relative;
 
@@ -174,7 +174,7 @@
   }
 }
 
-.description__wrap div::before {
+.description__wrap p:last-child::before {
   content: "";
   position: absolute;
   top: 0;
@@ -189,7 +189,7 @@
   }
 }
 
-.description__wrap div::after {
+.description__wrap p:last-child::after {
   content: "";
   position: absolute;
   top: 0;
