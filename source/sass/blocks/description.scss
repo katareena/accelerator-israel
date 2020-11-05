@@ -4,11 +4,11 @@
   max-width: 1366px;
   margin: 0 auto;
   // margin-left: 12px;
-  margin-bottom: 50px;
+  margin-bottom: 160px;
 
   background-image: url("../img/description-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: 12px 0;
   background-size: 581px 707px;
 
   position: relative;
@@ -18,11 +18,12 @@
   }
 
   @media (max-width: $mobile-width) {
-    background-image: none;
     min-width: 320px;
     max-width: 767px;
     margin-top: 50px;
     margin-left: 0;
+    background-image: none;
+    margin-bottom: 80px;
   }
 }
 
@@ -35,7 +36,7 @@
   height: 1208px;
   background-image: url("../img/watercolor-bg-description-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 12px 0;
   background-size: auto 1208px;
   z-index: -1;
 
@@ -51,7 +52,7 @@
 .description__wrap {
   width: 1024px;
   min-height: 707px;
-  padding-left: 516px;
+  padding-left: 528px;
   padding-top: 30px;
   margin: 0 auto;
 
@@ -66,7 +67,7 @@
   content: "";
   position: absolute;
   top: 210px;
-  right: 11px;
+  right: 0;
   width: 216px;
   height: 264px;
   background-image: url("../img/stamp@1x.png");
@@ -215,18 +216,17 @@
   list-style-type: none;
   counter-reset: num;
   position: relative;
-  padding: 15px 0 5px 0;
+  padding: 15px 0 1px 0;
   padding-left: 75px;
   margin: 0;
   margin-left: -32px;
-  margin-bottom: 8px;
 
   @media (max-width: $mobile-width) {
     margin-left: -23px;
     font-size: 14px;
     line-height: calc(22 / 14);
     padding-left: 67px;
-    margin-bottom: -6px;
+    margin-bottom: -16px;
 
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       line-height: 1.57;

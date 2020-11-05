@@ -12,12 +12,12 @@
     });
 
     tabLinks.forEach(function (y) {
-      y.classList.remove('select');
+      y.classList.remove('programs__button--select');
     });
 
     document.querySelector('#' + program).classList.add('active');
 
-    btnTarget.classList.add('select');
+    btnTarget.classList.add('programs__button--select');
   }
 
   tabLinks.forEach(function (el) {

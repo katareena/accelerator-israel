@@ -69,7 +69,7 @@
               <button class="programs__button programs__button--general" id="tab" type="button" data-program="general">
                 <span>Общие</span>
               </button>
-              <button class="programs__button programs__button--academic select" type="button" data-program="academic">Академические</button>
+              <button class="programs__button programs__button--academic programs__button--select" type="button" data-program="academic">Академические</button>
               <button class="programs__button programs__button--internships" type="button" data-program="internships">Стажировки</button>
               <button class="programs__button programs__button--volunteerism" type="button" data-program="volunteerism">Волонтерство</button>
               <button class="programs__button programs__button--religious" type="button" data-program="religious">Религиозные</button>
@@ -142,30 +142,49 @@
 
       <section class="pastime">
         <div class="pastime__wrap">
-          <h2>Жизнь в израиле</h2>
+          <h2>Жизнь в Израиле</h2>
           <p>Помимо учёбы, в рамках программы у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.</p>
           <div class="pastime__inner">
-            <div class="pastime__history">
-              <p class="pastime__text">Экскурсии по Израилю и знакомство с его историей</p>
+            <div class="pastime__item pastime__item--history pastime__item--activ">
+              <p>Экскурсии по Израилю и знакомство с его историей</p>
             </div>
 
-            <div class="pastime__language">
-              <p class="pastime__text">Изучение иврита</p>
+            <div class="pastime__item pastime__item--language">
+              <p>Изучение иврита</p>
             </div>
 
-            <div class="pastime__profession">
-              <p class="pastime__text">Обучение современным навыкам и профессиям</p>
+            <div class="pastime__item pastime__item--profession">
+              <p>Обучение современным навыкам и профессиям</p>
             </div>
 
-            <div class="pastime__creativity">
-              <p class="pastime__text">Совместные творческие проекты с израильской молодёжью</p>
+            <div class="pastime__item pastime__item--creativity">
+              <p>Совместные творческие проекты с израильской молодёжью</p>
             </div>
 
-            <div class="pastime__lead">
-              <p class="pastime__text">Развитие лидерства</p>
+            <div class="pastime__item pastime__item--lead">
+              <p>Развитие лидерства</p>
             </div>
+
+            <!-- <a class="pastime__prev">&#10094;</a>
+            <a class="pastime__next">&#10095;</a> -->
 
           </div>
+
+          <div class="pastime__controller">
+            <div class="pastime__dot pastime__dot--activ"></div>
+            <div class="pastime__dot"></div>
+            <div class="pastime__dot"></div>
+            <div class="pastime__dot"></div>
+            <div class="pastime__dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="gallery__wrap">
+          <h2>#masaisrael</h2>
+          <p>Познакомьтесь с программой от первого лица! Многие участники ведут блоги и фотодневники о жизни, учёбе и путешествиях в Израиле.</p>
+          <a class="gallery__button" href="#">Смотреть фото</a>
         </div>
       </section>
 

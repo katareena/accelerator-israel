@@ -270,7 +270,7 @@
 }
 
 //-------------- активное состояние таба ---------------
-.select {
+.programs__button--select {
   font-weight: 600;
   font-size: 13px;
   line-height: calc(19 / 16);
@@ -298,8 +298,8 @@
 }
 
 
-// .select::before,
-// .select::after {
+// .programs__button--select::before,
+// .programs__button--select::after {
 //   content: "";
 //   position: absolute;
 //   color: currentColor;
@@ -311,7 +311,7 @@
 //   }
 // }
 
-// .select::before {
+// .programs__button--select::before {
 //   border-bottom: 35px solid currentColor;
 //   bottom: 0;
 
@@ -320,7 +320,7 @@
 //   }
 // }
 
-// .select::after {
+// .programs__button--select::after {
 //   top: 0;
 //   border-top: 35px solid currentColor;
 
