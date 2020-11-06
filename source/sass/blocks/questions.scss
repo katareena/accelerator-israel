@@ -3,9 +3,9 @@
   min-width: 1024px;
   max-width: 1366px;
   margin: 0 auto;
-  margin-bottom: 128px;
+  margin-bottom: 125px;
   padding-top: 79px;
-  padding-bottom: 120px;
+  padding-bottom: 140px;
   position: relative;
 
   background-image: url("../img/questions-desktop@1x.png");
@@ -22,6 +22,7 @@
     max-width: 767px;
     padding-top: 0;
     padding-bottom: 0;
+    margin-bottom: 92px;
     background-image: none;
   }
 }
@@ -100,6 +101,7 @@
 }
 
 .questions__item {
+  display: block;
   width: 560px;
   min-height: 90px;
   padding-top: 37px;
