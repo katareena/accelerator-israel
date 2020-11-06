@@ -114,13 +114,13 @@
 
 .header__tel:hover,
 .header__tel:focus {
-  color: $accent-decor;
+  color: $accent-decor-1;
 }
 
 .header__callback:hover,
 .header__callback:focus {
-  color: $accent-decor;
-  border-bottom: 1px dashed $accent-decor;
+  color: $accent-decor-1;
+  border-bottom: 1px dashed $accent-decor-1;
 }
 
 .header h1 {

@@ -3,7 +3,6 @@
   min-width: 1024px;
   max-width: 1366px;
   margin: 0 auto;
-  // margin-left: 12px;
   margin-bottom: 160px;
 
   background-image: url("../img/description-desktop@1x.png");
@@ -182,7 +181,7 @@
   left: -18px;
   width: 2px;
   height: 42px;
-  background-color: $accent-decor;
+  background-color: $accent-decor-1;
 
   @media (max-width: $mobile-width) {
     left: -16px;
@@ -197,7 +196,7 @@
   left: -16px;
   width: 2px;
   height: 42px;
-  background-color: $accent-decor2;
+  background-color: $accent-decor-2;
 
   @media (max-width: $mobile-width) {
     left: -14px;
@@ -261,7 +260,7 @@
   height: 36px;
   line-height: 36px;
   background: $white;
-  color: $accent-decor;
+  color: $accent-decor-1;
   text-align: center;
   font-size: 18px;
   border-radius: 50%;

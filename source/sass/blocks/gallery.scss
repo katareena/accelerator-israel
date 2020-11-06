@@ -6,7 +6,7 @@
   margin: 0 auto;
 
   padding-top: 120px;
-  margin-bottom: 136px;
+  margin-bottom: 58px;
 
   background-image: url("../img/bg-gallery-desktop@1x.jpg");
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@
     min-height: auto;
     padding-top: 0;
     background-image: url("../img/bg-gallery-mobile@1x.jpg");
-    background-position: left 0 top 45px;
+    background-position: center top 45px;
     margin-bottom: 80px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
