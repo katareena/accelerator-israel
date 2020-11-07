@@ -3,17 +3,16 @@
   min-width: 1024px;
   max-width: 1366px;
   margin: 0 auto;
-  margin-bottom: 160px;
-
-  background-image: url("../img/description-desktop@1x.png");
+  padding-bottom: 160px;
+  background-image: url("../img/watercolor-bg-description-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: 12px 0;
-  background-size: 581px 707px;
-
+  background-position: top -200px right 0;
+  background-size: cover;
+  z-index: -1;
   position: relative;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/description-desktop@2x.png");
+    background-image: url("../img/watercolor-bg-description-desktop@2x.jpg");
   }
 
   @media (max-width: $mobile-width) {
@@ -22,29 +21,43 @@
     margin-top: 50px;
     margin-left: 0;
     background-image: none;
+    padding-bottom: 0;
     margin-bottom: 80px;
   }
 }
 
-.description::before {
+
+.description::after {
   content: "";
   position: absolute;
-  top: -202px;
-  left: -11px;
-  width: 1366px;
-  height: 1208px;
-  background-image: url("../img/watercolor-bg-description-desktop@1x.jpg");
+  top: 0;
+  left: 0;
+  width: 581px;
+  height: 707px;
+  background-image: url("../img/description-desktop@1x.png");
   background-repeat: no-repeat;
+  background-size: 581px 707px;
   background-position: 12px 0;
-  background-size: auto 1208px;
   z-index: -1;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/watercolor-bg-description-desktop@2x.jpg");
+    background-image: url("../img/description-desktop@2x.png");
+    background-size: contain;
   }
 
   @media (max-width: $mobile-width) {
-    display: none;
+    top: 275px;
+    right: 0;
+    width: 320px;
+    height: 199px;
+    background-image: url("../img/stamp-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-size: 216px 199px;
+    background-position: top 0 left 105px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/stamp-mobile@2x.jpg");
+    }
   }
 }
 
@@ -59,34 +72,6 @@
     width: 288px;
     padding-left: 0;
     padding-top: 0;
-  }
-}
-
-.description__wrap::after {
-  content: "";
-  position: absolute;
-  top: 210px;
-  right: 0;
-  width: 216px;
-  height: 264px;
-  background-image: url("../img/stamp@1x.png");
-  background-repeat: no-repeat;
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/stamp@2x.png");
-    background-size: 216px 250px;
-  }
-
-  @media (max-width: $mobile-width) {
-    background-image: url("../img/stamp-mobile@1x.jpg");
-    top: 275px;
-    right: 0;
-    z-index: -1;
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/stamp-mobile@2x.jpg");
-      background-size: contain;
-    }
   }
 }
 
@@ -152,7 +137,6 @@
 }
 
 .description__wrap p:last-child {
-  width: 520px;
   line-height: calc(21 / 15);
   color: rgba($text, 0.5);
   margin-left: 15px;

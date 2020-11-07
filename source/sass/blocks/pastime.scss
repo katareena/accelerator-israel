@@ -121,10 +121,13 @@
 }
 
 .pastime__inner {
+  width: 100%;
+  min-width: 1024px;
+  max-width: 1366px;
   display: grid;
   grid-template-columns: 230px 211px 211px auto 211px;
-  grid-template-rows: 385px 330px;
-  gap: 28px;
+  grid-template-rows: 385px 340px;
+  gap: 2.4%;
 
   margin-top: -20px;
 

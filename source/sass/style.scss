@@ -12,11 +12,23 @@
 @import "blocks/programs.scss";
 @import "blocks/intention.scss";
 @import "blocks/description.scss";
-@import "blocks/pastime.scss";
+// @import "blocks/pastime.scss"; адаптивность все блока
 @import "blocks/gallery.scss";
-@import "blocks/questions.scss";
-@import "blocks/feedback.scss";
-@import "blocks/details.scss";
-// @import "blocks/footer.scss";
-// @import "blocks/copyright.scss";
-// @import "blocks/social.scss";
+@import "blocks/questions.scss"; //z-index
+@import "blocks/feedback.scss"; //z-index
+// @import "blocks/details.scss";  адаптивность карты (?)
+@import "blocks/footer.scss";
+@import "blocks/copyright.scss";
+@import "blocks/social.scss";
+
+// слайдеры
+// пин на карте
+
+// спрайт
+// фото-куратор
+// фото-отзыв
+
+// z-index
+// оформление табов
+// проверка критериев
+// валидация html: аккордион, элементы в button (принудительный activ?)
