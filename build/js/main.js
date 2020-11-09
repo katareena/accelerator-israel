@@ -5,22 +5,21 @@
   var moveAccordion = function (elem) {
     var btnTarget = elem.currentTarget;
     var questions = btnTarget.dataset.questions;
-
+    console.log(1)
     if (btnTarget.classList.contains('open')) {
+      console.log(2)
       document.querySelector('#' + questions).style.display = 'none';
       btnTarget.classList.remove('open');
     } else {
+      console.log(3)
       document.querySelector('#' + questions).style.display = 'block';
       btnTarget.classList.toggle('open');
     }
   }
 
-  window.accordion = {
-    moveAccordion: moveAccordion
-  }
-
   arrow.forEach(function (el) {
-    el.addEventListener('click', window.accordion.moveAccordion);
+    console.log(el)
+    el.addEventListener('click', moveAccordion);
   });
 
 })();
@@ -29,17 +28,23 @@
 (function () {
   function mapInit() {
     var screens = {
-      // sm: 320,
-      // md: 768,
+      sm: 320,
+      md: 768,
       xl: 1024
     };
     var iconSize = {
+      sm: [20, 30],
+      md: [20, 30],
       xl: [20, 30]
     };
     var iconOffset = {
+      sm: [90, -90],
+      md: [90, -90],
       xl: [90, -90]
     };
     var mapCenter = {
+      sm: [55.028196, 82.927109],
+      md: [55.028196, 82.927109],
       xl: [55.028196, 82.927109]
     };
     var mapZoom = {
@@ -315,6 +320,52 @@
   // prev.addEventListener('click', window.pastime.minusSlide);
   // next.addEventListener('click', window.pastime.plusSlide);
   // dot
+})();
+
+'use strict';
+(function () {
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlide() {
+    showSlides(slideIndex += 1);
+  }
+
+  function minusSlide() {
+    showSlides(slideIndex -= 1);
+  }
+
+  // function currentSlide(n) {
+  //   showSlides(slideIndex = n);
+  // }
+
+  function showSlides(n) {
+    if(window.innerWidth <= 767) {
+      var i;
+      var slides = document.getElementsByClassName('pastime__item');
+      var dots = document.getElementsByClassName('pastime__dot');
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+          slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" pastime__dot--activ", "");
+      }
+      slides[slideIndex - 1].style.display = "flex";
+      dots[slideIndex - 1].className += " pastime__dot--activ";
+    }
+  }
+
+  var prevBtn = document.querySelector('.pastime__prev');
+  var nextBtn = document.querySelector('.pastime__next');
+
+  prevBtn.addEventListener('click', minusSlide);
+  nextBtn.addEventListener('click', plusSlide);
 })();
 
 'use strict';

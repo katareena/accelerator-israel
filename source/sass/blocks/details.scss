@@ -4,35 +4,23 @@
   max-width: 1366px;
   margin: 0 auto;
   padding-bottom: 74px;
-  position: relative;
+
+  background-image: url("../img/watercolor-bg-details-desktop@1x.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/watercolor-bg-details-desktop@2x.jpg");
+  }
 
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
     padding-bottom: 64px;
+    background-image: none;
   }
 }
-
-// .details::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 1366px;
-//   height: 721px;
-//   background-image: url("../img/watercolor-bg-details-desktop@1x.jpg");
-//   background-size: 1366px 721px;
-//   background-repeat: no-repeat;
-//   z-index: -1;
-
-//   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-//     background-image: url("../img/watercolor-bg-details-desktop@2x.jpg");
-//   }
-
-//   @media (max-width: $mobile-width) {
-//     display: none;
-//   }
-// }
 
 .details__wrap {
   width: 100%;
@@ -46,7 +34,7 @@
 
   @media (max-width: $mobile-width) {
     min-width: 320px;
-    max-width: 767px;
+    max-width: 320px;
     padding-left: 0;
     margin: 0 auto;
     flex-direction: column;
@@ -54,7 +42,8 @@
 }
 
 .details__inner {
-  padding-right: 3.2%;
+  flex: 0 1 44%;
+  padding-right: 3.1%;
 
   @media (max-width: $mobile-width) {
     margin-bottom: 40px;
@@ -166,10 +155,11 @@
 }
 
 .details__img {
+  padding-top: 5px;
   width: 112px;
   height: 112px;
   flex-shrink: 0;
-  background-color: plum;
+  transform: scale(1.05);
 
   @media (max-width: $mobile-width) {
     margin-bottom: 15px;
@@ -267,22 +257,19 @@
 }
 
 .details__map {
-  // width: 100%;
-  // min-width: 500px;
-  // max-width: 702px;
-  width: 702px;
+  flex: 0 1 56%;
   height: 448px;
-  flex-shrink: 0;
-  // background-image: url("../img/map@1x.png");
-  // background-repeat: no-repeat;
-  // background-size: contain;
-  // // position: relative;
+  background-image: url("../img/map@1x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  // position: relative;
 
-  // @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-  //   background-image: url("../img/map@2x.png");
-  // }
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/map@2x.png");
+  }
 
   @media (max-width: $mobile-width) {
+    flex-basis: 420px;
     width: 320px;
     height: 420px;
     margin: 0 auto;
@@ -297,6 +284,7 @@
   }
 }
 
+// маска для карты
 // .details__map::before {
 //   content: "";
 //   position: absolute;

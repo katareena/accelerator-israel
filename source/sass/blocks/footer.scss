@@ -1,20 +1,24 @@
 .footer {
   width: 100%;
-  min-width: 1024px;
+  min-width: 1004px;
   max-width: 1366px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
   border-top: 1px solid rgba($text, 0.2);
   overflow: hidden;
 
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 .footer__wrap {
   width: 100%;
-  min-width: 1024px;
+  min-width: 1004px;
   max-width: 1143px;
   padding-top: 24px;
   padding-bottom: 15px;

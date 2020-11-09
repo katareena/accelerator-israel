@@ -97,6 +97,10 @@
   cursor: pointer;
   fill: currentColor;
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    padding: 0;
+  }
+
   @media (max-width: $mobile-width) {
     top: calc(50% - 45px);
   }
@@ -104,19 +108,35 @@
 
 .about__circle {
   color: $white;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    fill: $white;
+  }
 }
 
 .about__triangle {
   color: $accent-decor-3;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    fill: $accent-decor-3;
+  }
 }
 
 .about__button:hover svg > .about__triangle {
   color: $play-hover;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    fill: $play-hover;
+  }
 }
 
 .about__button:active svg > .about__circle {
   color: $play-click;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    fill: $play-click;
+  }
 }
 
 .about__button svg {

@@ -60,10 +60,10 @@
 
 .questions__wrap {
   width: 560px;
-  // padding-right: 45.9%;
-  // margin: 0 auto;
   margin-left: 110px;
   margin-right: auto;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: $mobile-width) {
     width: 288px;

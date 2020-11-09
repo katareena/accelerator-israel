@@ -1,0 +1,45 @@
+'use strict';
+(function () {
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlide() {
+    showSlides(slideIndex += 1);
+  }
+
+  function minusSlide() {
+    showSlides(slideIndex -= 1);
+  }
+
+  // function currentSlide(n) {
+  //   showSlides(slideIndex = n);
+  // }
+
+  function showSlides(n) {
+    if(window.innerWidth <= 767) {
+      var i;
+      var slides = document.getElementsByClassName('pastime__item');
+      var dots = document.getElementsByClassName('pastime__dot');
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+          slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" pastime__dot--activ", "");
+      }
+      slides[slideIndex - 1].style.display = "flex";
+      dots[slideIndex - 1].className += " pastime__dot--activ";
+    }
+  }
+
+  var prevBtn = document.querySelector('.pastime__prev');
+  var nextBtn = document.querySelector('.pastime__next');
+
+  prevBtn.addEventListener('click', minusSlide);
+  nextBtn.addEventListener('click', plusSlide);
+})();

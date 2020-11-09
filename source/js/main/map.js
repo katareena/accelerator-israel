@@ -2,17 +2,23 @@
 (function () {
   function mapInit() {
     var screens = {
-      // sm: 320,
-      // md: 768,
+      sm: 320,
+      md: 768,
       xl: 1024
     };
     var iconSize = {
+      sm: [20, 30],
+      md: [20, 30],
       xl: [20, 30]
     };
     var iconOffset = {
+      sm: [90, -90],
+      md: [90, -90],
       xl: [90, -90]
     };
     var mapCenter = {
+      sm: [55.028196, 82.927109],
+      md: [55.028196, 82.927109],
       xl: [55.028196, 82.927109]
     };
     var mapZoom = {
