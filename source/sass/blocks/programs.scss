@@ -76,7 +76,7 @@
   margin-right: 30px;
 
   @media (max-width: $mobile-width) {
-    width: auto;
+    width: 362px;
     margin-right: 0;
     margin-left: -42px;
     display: flex;
@@ -137,7 +137,6 @@
   }
 }
 
-
 .programs__button--general::before {
   content: "";
   position: absolute;
@@ -147,12 +146,22 @@
   height: 36px;
   background-image: url("../img/black-general.svg");
   background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
 
 .programs__button--general:hover::before {
   left: 24px;
   top: 20px;
   background-image: url("../img/yellow-general.svg");
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
 
 .programs__button--academic::before {
@@ -164,10 +173,20 @@
   height: 36px;
   background-image: url("../img/black-academic.svg");
   background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
 
 .programs__button--academic:hover::before {
   background-image: url("../img/yellow-academic.svg");
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
 
 .programs__button--internships::before {
@@ -179,12 +198,22 @@
   height: 36px;
   background-image: url("../img/black-internships.svg");
   background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 9px;
+    top: 6px;
+  }
 }
 
 .programs__button--internships:hover::before {
   left: 22px;
   top: 22px;
   background-image: url("../img/yellow-internships.svg");
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 10px;
+  }
 }
 
 .programs__button--volunteerism::before {
@@ -196,12 +225,22 @@
   height: 36px;
   background-image: url("../img/black-volunteerism.svg");
   background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 5px;
+  }
 }
 
 .programs__button--volunteerism:hover::before {
   left: 21px;
   top: 21px;
   background-image: url("../img/yellow-volunteerism.svg");
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
 
 .programs__button--religious::before {
@@ -213,11 +252,22 @@
   height: 36px;
   background-image: url("../img/black-religious.svg");
   background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
 
 .programs__button--religious:hover::before {
   background-image: url("../img/yellow-religious.svg");
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
 }
+
 
 //-------------- наполнение таба ---------------
 .programs__box {
@@ -231,7 +281,7 @@
 }
 
 .programs__item {
-  display: none;
+  // display: none;
   padding-left: 4.6%;
   padding-right: 4.6%;
 }
@@ -272,7 +322,11 @@
 }
 
 //-------------- активное состояние таба ---------------
-.programs__button--select {
+.programs__button--select-general,
+.programs__button--select-academic,
+.programs__button--select-internships,
+.programs__button--select-volunteerism,
+.programs__button--select-religious {
   font-weight: 600;
   font-size: 13px;
   line-height: calc(19 / 16);
@@ -280,7 +334,7 @@
   width: 228px;
   height: 68px;
   position: relative;
-  color: white;
+  color: $white;
 
   background-image: url("../img/rectangle.png");
   background-repeat: no-repeat;
@@ -299,34 +353,82 @@
   }
 }
 
+.programs__button--select-general::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/white-general.svg");
+  background-repeat: no-repeat;
 
-// .programs__button--select::before,
-// .programs__button--select::after {
-//   content: "";
-//   position: absolute;
-//   color: currentColor;
-//   right: 0;
-//   border-left: 30px solid transparent;
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
+}
 
-//   @media (max-width: $mobile-width) {
-//     display: none;
-//   }
-// }
+.programs__button--select-academic::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/white-academic.svg");
+  background-repeat: no-repeat;
 
-// .programs__button--select::before {
-//   border-bottom: 35px solid currentColor;
-//   bottom: 0;
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
+}
 
-//   @media (max-width: $mobile-width) {
-//     display: none;
-//   }
-// }
+.programs__button--select-internships::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 17px;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/white-internships.svg");
+  background-repeat: no-repeat;
 
-// .programs__button--select::after {
-//   top: 0;
-//   border-top: 35px solid currentColor;
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 10px;
+  }
+}
 
-//   @media (max-width: $mobile-width) {
-//     display: none;
-//   }
-// }
+.programs__button--select-volunteerism::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 18px;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/white-volunteerism.svg");
+  background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
+}
+
+.programs__button--select-religious::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 22px;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/white-religious.svg");
+  background-repeat: no-repeat;
+
+  @media (max-width: $mobile-width) {
+    left: 10px;
+    top: 7px;
+  }
+}

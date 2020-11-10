@@ -2,6 +2,7 @@
   width: 100%;
   min-width: 1024px;
   max-width: 1366px;
+  min-height: 994px;
   margin: 0 auto;
   margin-bottom: 15px;
   padding-top: 79px;
@@ -19,6 +20,7 @@
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
+    min-height: 717px;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 92px;
@@ -172,7 +174,7 @@
 }
 
 .questions__item p {
-  display: none;
+  // display: none;
   width: 480px;
   font-size: 15px;
   line-height: calc(21 / 15);

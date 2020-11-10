@@ -1,26 +1,64 @@
 'use strict';
 (function () {
-  var arrow = document.querySelectorAll('.questions__arrow');
+  var arrows = document.querySelectorAll('.questions__arrow');
+
 
   var moveAccordion = function (elem) {
+
     var btnTarget = elem.currentTarget;
     var questions = btnTarget.dataset.questions;
-    console.log(1)
     if (btnTarget.classList.contains('open')) {
-      console.log(2)
       document.querySelector('#' + questions).style.display = 'none';
       btnTarget.classList.remove('open');
     } else {
-      console.log(3)
       document.querySelector('#' + questions).style.display = 'block';
       btnTarget.classList.toggle('open');
     }
   }
 
-  arrow.forEach(function (el) {
-    console.log(el)
+  arrows.forEach(function (el) {
     el.addEventListener('click', moveAccordion);
   });
+
+})();
+
+'use strict';
+(function () {
+  var cover = document.querySelector('.cover');
+
+  var closeOverlayHandler = function (evt) {
+    window.matchesForIE.changeMatchesForIE();
+      if (cover.classList.contains('cover--show')) {
+        evt.preventDefault();
+        cover.classList.remove('cover--show');
+    }
+  };
+
+  document.addEventListener('click', closeOverlayHandler);
+
+})();
+
+'use strict';
+(function () {
+  var getReadyPage = function () {
+    var questions = document.querySelectorAll('.questions__elem-js');
+    var programsItem = document.querySelectorAll('.programs__item');
+    var cover = document.querySelector('.cover');
+
+    questions.forEach(function (el) {
+      el.style.display = 'none';
+    });
+
+    programsItem.forEach(function (el) {
+      if (!el.classList.contains('active')) {
+        el.style.display = 'none';
+      }
+    });
+
+    cover.classList.add('cover--show');
+  }
+
+  document.addEventListener("DOMContentLoaded", getReadyPage);
 
 })();
 
@@ -38,18 +76,18 @@
       xl: [20, 30]
     };
     var iconOffset = {
-      sm: [90, -90],
-      md: [90, -90],
-      xl: [90, -90]
+      sm: [-10, -30],
+      md: [-10, -30],
+      xl: [-10, -30]
     };
     var mapCenter = {
-      sm: [55.028196, 82.927109],
-      md: [55.028196, 82.927109],
-      xl: [55.028196, 82.927109]
+      sm: [55.028594, 82.928222],
+      md: [55.028594, 82.928222],
+      xl: [55.028594, 82.928222]
     };
     var mapZoom = {
-      sm: 16,
-      md: 16,
+      sm: 17,
+      md: 17,
       xl: 17
     };
 
@@ -77,7 +115,7 @@
     map.behaviors.disable('scrollZoom');
 
     function createMarker(screenWidth) {
-      return new ymaps.Placemark([55.028196, 82.927109], {}, {
+      return new ymaps.Placemark([55.028594, 82.928222], {}, {
         iconLayout: 'default#image',
         iconImageHref: 'img/map-pin.svg',
         iconImageSize: iconSize[screenWidth],
@@ -151,6 +189,13 @@
   window.maskPhone = {
     maskPhoneHandler: maskPhoneHandler
   };
+
+  // --- обработчк на все инпуты для применения формата ввода ---
+  var inputsPhoneUser = document.querySelectorAll('.user-phone-js');
+  inputsPhoneUser.forEach(function (el) {
+    el.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
+  });
+
 })();
 
 'use strict';
@@ -158,11 +203,11 @@
   var ESCAPE = 'Escape';
   var link = document.querySelector('.header__callback');
   var popup = document.querySelector('.callback');
-  var close = popup.querySelector('.callback__close');
+  var closeBtn = popup.querySelector('.callback__close');
   var form = popup.querySelector('.callback__form');
-  var nameUser = popup.querySelector('[name=callback-name]');
-  var phoneUser = popup.querySelector('[name=user-phone]');
-  var checkbox = document.querySelector('input[type=checkbox]');
+  var nameUser = popup.querySelector('.user-name-js');
+  var phoneUser = popup.querySelector('.user-phone-js');
+  var checkbox = popup.querySelector('input[type=checkbox]');
 
   var message = document.querySelector('.success');
   var buttonMessage = message.querySelector('.success__button');
@@ -177,14 +222,29 @@
     isStorageSupport = false;
   }
 
+  var preventScroll = function () {
+    var body = document.body;
+    body.style.height = '100vh';
+    body.style.overflowY = 'hidden';
+  }
+
+  var getScroll = function () {
+    const body = document.body;
+    body.style.position = '';
+    body.style.top = '';
+    body.style.height = '';
+    body.style.overflowY = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  }
+
   var openHeandler = function (evt) {
     evt.preventDefault();
     form.reset();
     popup.classList.add('callback--open');
     nameUser.focus();
-
+    preventScroll();
     form.addEventListener('submit', window.modalCallback.submitHeandler);
-    close.addEventListener('click', window.modalCallback.closeFormHeandler);
+    closeBtn.addEventListener('click', window.modalCallback.closeFormHeandler);
     phoneUser.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
     popup.addEventListener('click', window.modalCallback.closeOverlayHandler);
     window.addEventListener('keydown', window.modalCallback.closeEscHandler);
@@ -212,6 +272,7 @@
   var closeForm = function () {
     popup.classList.remove('callback--open');
     popup.classList.remove('callback--error');
+    getScroll();
     popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
     window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
   };
@@ -220,6 +281,7 @@
     evt.preventDefault();
     popup.classList.remove('callback--open');
     popup.classList.remove('callback--error');
+    getScroll();
     popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
     window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
   };
@@ -230,6 +292,7 @@
         evt.preventDefault();
         popup.classList.remove('callback--open');
         popup.classList.remove('callback--error');
+        getScroll();
         popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
         window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
       }
@@ -243,6 +306,7 @@
         evt.preventDefault();
         popup.classList.remove('callback--open');
         popup.classList.remove('callback--error');
+        getScroll();
         popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
         window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
       }
@@ -255,7 +319,9 @@
     closeFormHeandler: closeFormHeandler,
     closeForm: closeForm,
     closeEscHandler: closeEscHandler,
-    closeOverlayHandler: closeOverlayHandler
+    closeOverlayHandler: closeOverlayHandler,
+    preventScroll: preventScroll,
+    getScroll: getScroll
   };
 
   link.addEventListener('click', window.modalCallback.openHeandler);
@@ -264,83 +330,65 @@
 
 'use strict';
 (function () {
+  var slideIndex = 1;
 
-  // var slideIndex = 1;
-  // showSlides(slideIndex);
+  showSlidesFeedback(slideIndex);
 
-  // /* Функция увеличивает индекс на 1, показывает следующй слайд*/
-  // function plusSlide() {
-  //     showSlides(slideIndex += 1);
-  // }
+  function nextSlide() {
+    showSlidesFeedback(slideIndex += 1);
+  }
 
-  // /* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
-  // function minusSlide() {
-  //     showSlides(slideIndex -= 1);
-  // }
+  function prevSlide() {
+    showSlidesFeedback(slideIndex -= 1);
+  }
 
-  // /* Устанавливает текущий слайд */
-  // function currentSlide(n) {
-  //     showSlides(slideIndex = n);
-  // }
+  function showSlidesFeedback(n) {
+      var i;
+      var slides = document.getElementsByClassName('feedback__slide');
+      var numberValue = document.querySelector('.feedback__number');
+      var totalValue = document.querySelector('.feedback__total');
 
-  // /* Основная функция слайдера */
-  // function showSlides(n) {
-  //     var i;
-  //     var slides = document.querySelector('.pastime__item');
-  //     var dots = document.querySelector('.pastime__dot');
-  //     if (n > slides.length) {
-  //       slideIndex = 1
-  //     }
-  //     if (n < 1) {
-  //         slideIndex = slides.length
-  //     }
-  //     for (i = 0; i < slides.length; i++) {
-  //         slides[i].style.display = 'none';
-  //     }
-  //     for (i = 0; i < dots.length; i++) {
-  //         dots[i].className = dots[i].className.replace(' pastime__dot--activ', '');
-  //     }
-  //     slides[slideIndex - 1].style.display = 'block';
-  //     dots[slideIndex - 1].className += ' active';
-  // }
+      if (n > slides.length) {
+        slideIndex = 1
+        numberValue.textContent = 1;
+        totalValue.textContent = slides.length;
+      }
+      if (n < 1) {
+          slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+      }
 
+      slides[slideIndex - 1].style.display = 'block';
+      numberValue.textContent = slideIndex;
+      totalValue.textContent = slides.length;
+  }
 
-  // window.pastime = {
-  //   plusSlide: plusSlide,
-  //   minusSlide: minusSlide,
-  //   currentSlide: currentSlide,
-  //   showSlides: showSlides
-  // }
+  var prevBtnFdb = document.querySelector('.feedback__arrow-prev');
+  var nextBtnFdb = document.querySelector('.feedback__arrow-next');
 
-
-  // var prev = document.querySelector('.pastime__prev');
-  // var next = document.querySelector('.pastime__next');
-  // var dot = document.querySelectorAll('.pastime__dot');
-
-  // prev.addEventListener('click', window.pastime.minusSlide);
-  // next.addEventListener('click', window.pastime.plusSlide);
-  // dot
+  prevBtnFdb.addEventListener('click', prevSlide);
+  nextBtnFdb.addEventListener('click', nextSlide);
 })();
 
 'use strict';
 (function () {
+  var MAX_MOBILE_WIDTH = 767;
   var slideIndex = 1;
-  showSlides(slideIndex);
+
+  showSlidesPastime(slideIndex);
 
   function plusSlide() {
-    showSlides(slideIndex += 1);
+    showSlidesPastime(slideIndex += 1);
   }
 
   function minusSlide() {
-    showSlides(slideIndex -= 1);
+    showSlidesPastime(slideIndex -= 1);
   }
 
-  // function currentSlide(n) {
-  //   showSlides(slideIndex = n);
-  // }
-
-  function showSlides(n) {
-    if(window.innerWidth <= 767) {
+  function showSlidesPastime(n) {
+    if(window.innerWidth <= MAX_MOBILE_WIDTH) {
       var i;
       var slides = document.getElementsByClassName('pastime__item');
       var dots = document.getElementsByClassName('pastime__dot');
@@ -351,13 +399,13 @@
           slideIndex = slides.length
       }
       for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+          slides[i].style.display = 'none';
       }
       for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" pastime__dot--activ", "");
+          dots[i].className = dots[i].className.replace(' pastime__dot--activ', '');
       }
-      slides[slideIndex - 1].style.display = "flex";
-      dots[slideIndex - 1].className += " pastime__dot--activ";
+      slides[slideIndex - 1].style.display = 'flex';
+      dots[slideIndex - 1].className += ' pastime__dot--activ';
     }
   }
 
@@ -366,6 +414,7 @@
 
   prevBtn.addEventListener('click', minusSlide);
   nextBtn.addEventListener('click', plusSlide);
+
 })();
 
 'use strict';
@@ -374,10 +423,17 @@
   var message = document.querySelector('.success');
   var buttonMessage = message.querySelector('.success__button');
   var closeMessage = message.querySelector('.success__close');
+  var inputsPhoneUser = document.querySelectorAll('.user-phone-js');
+  var forms = document.querySelectorAll('.forms-js');
 
+  // --- хендлеры на все виды закрытия окна Успешной отправки ---
   var closeMessageHeandler = function (evt) {
     evt.preventDefault();
     message.classList.remove('success--open');
+    forms.forEach(function (el) {
+      el.reset();
+    });
+    window.modalCallback.getScroll();
   };
 
   var closeMessageEscHandler = function (evt) {
@@ -385,6 +441,10 @@
       if (message.classList.contains('success--open')) {
         evt.preventDefault();
         message.classList.remove('success--open');
+        forms.forEach(function (el) {
+          el.reset();
+        });
+        window.modalCallback.getScroll();
       }
     }
   };
@@ -395,17 +455,22 @@
       if (message.classList.contains('success--open')) {
         evt.preventDefault();
         message.classList.remove('success--open');
+        forms.forEach(function (el) {
+          el.reset();
+        });
+        window.modalCallback.getScroll();
       }
     }
   };
 
-  //--------
-  var intentionPhoneUser = document.querySelector('[name=user-phone]');
-
+  // --- хендлер на submit всех форм ---
   var submitHeandler = function (evt) {
     evt.preventDefault();
-    if (intentionPhoneUser.value) {
-      message.classList.add('success--open');
+    for (var i = 0; i < inputsPhoneUser.length; i++) {
+      if (inputsPhoneUser[i].value) {
+        message.classList.add('success--open');
+        window.modalCallback.preventScroll();
+      }
     }
   };
 
@@ -416,40 +481,43 @@
     submitHeandler: submitHeandler
   };
 
+  // --- обработчк на все формы для открытия окна Успешной отправки ---
+  forms.forEach(function (el) {
+    el.addEventListener('submit', window.success.submitHeandler);
+  });
+  // --- обработчики на все виды закрытия окна Успешной отправки ---
   window.addEventListener('keydown', window.success.closeMessageEscHandler);
   message.addEventListener('click', window.success.closeOverlayHandler);
   closeMessage.addEventListener('click', window.success.closeMessageHeandler);
   buttonMessage.addEventListener('click', window.success.closeMessageHeandler);
 
-  var intentionForm = document.querySelector('.intention__form');
-  intentionForm.addEventListener('submit', window.success.submitHeandler);
-  intentionPhoneUser.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
-
 })();
 
 'use strict';
 (function () {
-  var tabLinks = document.querySelectorAll('.programs__button');
-  var tabContent = document.querySelectorAll('.programs__item');
+  var tabsLink = document.querySelectorAll('.programs__button');
+  var tabsContent = document.querySelectorAll('.programs__item');
 
   function openTabs(elem) {
     var btnTarget = elem.currentTarget;
     var program = btnTarget.dataset.program;
 
-    tabContent.forEach(function (x) {
-      x.classList.remove('active');
+    tabsContent.forEach(function (x) {
+      // x.classList.remove('active');
+      x.style.display = 'none';
     });
 
-    tabLinks.forEach(function (y) {
-      y.classList.remove('programs__button--select');
+    tabsLink.forEach(function (y) {
+      var programClass = y.dataset.program;
+      y.classList.remove('programs__button--select-' + programClass);
     });
 
-    document.querySelector('#' + program).classList.add('active');
-
-    btnTarget.classList.add('programs__button--select');
+    // document.querySelector('#' + program).classList.add('active');
+    document.querySelector('#' + program).style.display = 'block'
+    btnTarget.classList.add('programs__button--select-' + program);
   }
 
-  tabLinks.forEach(function (el) {
+  tabsLink.forEach(function (el) {
     el.addEventListener('click', openTabs);
   });
 

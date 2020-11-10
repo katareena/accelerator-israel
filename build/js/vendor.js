@@ -1650,22 +1650,11 @@
 } )( window, document );
 
 'use strict';
-
-// if ('NodeList' in window && !NodeList.prototype.forEach) {
-//   console.info('polyfill for IE11');
-//   NodeList.prototype.forEach = function (callback, thisArg) {
-//     thisArg = thisArg || window;
-//     for (var i = 0; i < this.length; i++) {
-//       callback.call(thisArg, this[i], i, this);
-//     }
-//   };
-// }
-
 (function () {
 
   var changeForEachForIE = function () {
     if ('NodeList' in window && !NodeList.prototype.forEach) {
-      console.info('polyfill for IE11');
+      console.info('polyfill changeForEachForIE for IE11');
       NodeList.prototype.forEach = function (callback, thisArg) {
         thisArg = thisArg || window;
         for (var i = 0; i < this.length; i++) {
@@ -1689,6 +1678,7 @@
 
   var changeMatchesForIE = function () {
     if (!Element.prototype.matches) {
+      console.info('polyfill changeMatchesForIE for IE11');
       Element.prototype.matches = Element.prototype.matchesSelector ||
         Element.prototype.webkitMatchesSelector ||
         Element.prototype.mozMatchesSelector ||

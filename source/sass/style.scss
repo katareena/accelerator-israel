@@ -7,8 +7,6 @@
 @import "blocks/header.scss";
 @import "blocks/main.scss";
 @import "blocks/about.scss";
-@import "blocks/callback.scss";
-@import "blocks/success.scss";
 @import "blocks/programs.scss";
 @import "blocks/intention.scss";
 @import "blocks/description.scss";
@@ -20,11 +18,12 @@
 @import "blocks/footer.scss";
 @import "blocks/copyright.scss";
 @import "blocks/social.scss";
+@import "blocks/callback.scss";
+@import "blocks/success.scss";
+@import "blocks/cover.scss";
 
-// Программы: оформление табов, слайдер
-// Отзывы: слайдер
+// Программы: оформление табов
 // пин на карте
-// ие грид - foe each
-
-// валидация html: аккордион, элементы в button (принудительный activ?)
+// ие грид
 // проверка критериев
+// все активные элементы

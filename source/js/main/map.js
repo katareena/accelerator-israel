@@ -12,18 +12,18 @@
       xl: [20, 30]
     };
     var iconOffset = {
-      sm: [90, -90],
-      md: [90, -90],
-      xl: [90, -90]
+      sm: [-10, -30],
+      md: [-10, -30],
+      xl: [-10, -30]
     };
     var mapCenter = {
-      sm: [55.028196, 82.927109],
-      md: [55.028196, 82.927109],
-      xl: [55.028196, 82.927109]
+      sm: [55.028594, 82.928222],
+      md: [55.028594, 82.928222],
+      xl: [55.028594, 82.928222]
     };
     var mapZoom = {
-      sm: 16,
-      md: 16,
+      sm: 17,
+      md: 17,
       xl: 17
     };
 
@@ -51,7 +51,7 @@
     map.behaviors.disable('scrollZoom');
 
     function createMarker(screenWidth) {
-      return new ymaps.Placemark([55.028196, 82.927109], {}, {
+      return new ymaps.Placemark([55.028594, 82.928222], {}, {
         iconLayout: 'default#image',
         iconImageHref: 'img/map-pin.svg',
         iconImageSize: iconSize[screenWidth],

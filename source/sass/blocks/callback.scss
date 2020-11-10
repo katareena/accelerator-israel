@@ -1,10 +1,12 @@
 .callback {
   @include modal;
   display: none;
+  background-color: $modal-background;
 }
 
 .callback__form {
   @include modal-form;
+  background-color: $white;
   padding-top: 56px;
   padding-left: 48px;
   padding-right: 72px;
@@ -61,6 +63,12 @@
 
 .callback__item {
   margin-bottom: 8px;
+}
+
+.callback__form label {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: none;
+  }
 }
 
 .callback__form input {

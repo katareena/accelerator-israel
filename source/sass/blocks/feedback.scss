@@ -55,7 +55,7 @@
   width: 100%;
   min-width: 1024px;
   max-width: 1266px;
-  height: 487px;
+  min-height: 487px;
   margin-left: auto;
   margin-right: 0;
   position: relative;
@@ -66,7 +66,7 @@
     min-width: 288px;
     max-width: 288px;
     margin: 0 auto;
-    height: 990px;
+    min-height: inherit;
   }
 }
 
@@ -74,10 +74,10 @@
   width: 100%;
   min-width: 1024px;
   max-width: 1366px;
+  min-height: inherit;
   padding-left: 31.9%;
   padding-right: 10px;
   padding-top: 40px;
-  // padding-bottom: 20px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -226,11 +226,12 @@
 
 .feedback__control {
   position: absolute;
-  width: 110px;
-  height: 26px;
+  width: 120px;
+  height: 25px;
   left: 31.2%;
   bottom: 7px;
   display: flex;
+
 
   @media (max-width: $mobile-width) {
     position: absolute;
@@ -243,17 +244,27 @@
 
 .feedback__counter {
   width: 50px;
-  height: 26px;
-  background-color: hotpink;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback__number,
+.feedback__total {
+  width: 22px;
+  height: 100%;
+  line-height: 25px;
+  text-align: center;
 }
 
 .feedback__arrow {
-  width: 60px;
-  padding-right: 7px;
+  width: 70px;
+  line-height: 25px;
+  padding-right: 17px;
   padding-left: 18px;
 
-  background-color: yellow;
   cursor: pointer;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
 

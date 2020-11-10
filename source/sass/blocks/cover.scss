@@ -1,0 +1,40 @@
+.cover {
+  @include modal;
+  display: none;
+  background-color: $cover-background;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $mobile-width) {
+    height: 100vh;
+  }
+}
+
+.cover--show {
+  display: flex;
+}
+
+.cover p {
+  width: 620px;
+  height: 320px;
+  margin: 0;
+  color: $cover-text;
+  font-weight: bold;
+  font-size: 43px;
+  line-height: calc(51 / 43);
+
+  padding-top: 61px;
+  padding-left: 48px;
+  padding-right: 101px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 1.19;
+  }
+
+  @media (max-width: $mobile-width) {
+    height: 100vh;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,26 +1,28 @@
 'use strict';
 (function () {
-  var tabLinks = document.querySelectorAll('.programs__button');
-  var tabContent = document.querySelectorAll('.programs__item');
+  var tabsLink = document.querySelectorAll('.programs__button');
+  var tabsContent = document.querySelectorAll('.programs__item');
 
   function openTabs(elem) {
     var btnTarget = elem.currentTarget;
     var program = btnTarget.dataset.program;
 
-    tabContent.forEach(function (x) {
-      x.classList.remove('active');
+    tabsContent.forEach(function (x) {
+      // x.classList.remove('active');
+      x.style.display = 'none';
     });
 
-    tabLinks.forEach(function (y) {
-      y.classList.remove('programs__button--select');
+    tabsLink.forEach(function (y) {
+      var programClass = y.dataset.program;
+      y.classList.remove('programs__button--select-' + programClass);
     });
 
-    document.querySelector('#' + program).classList.add('active');
-
-    btnTarget.classList.add('programs__button--select');
+    // document.querySelector('#' + program).classList.add('active');
+    document.querySelector('#' + program).style.display = 'block'
+    btnTarget.classList.add('programs__button--select-' + program);
   }
 
-  tabLinks.forEach(function (el) {
+  tabsLink.forEach(function (el) {
     el.addEventListener('click', openTabs);
   });
 

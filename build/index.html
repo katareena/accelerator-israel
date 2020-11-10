@@ -31,7 +31,7 @@
         <a class="header__callback" href="#">заказать звонок</a>
       </div>
       <h1>Учёба, путешествие и карьера для еврейской молодёжи</h1>
-      <a class="header__about" href="#about"></a>
+      <a class="header__about" href="#about" aria-hidden="true"></a>
     </header>
 
     <main class="main">
@@ -66,10 +66,8 @@
 
           <div class="programs__inner">
             <div class="programs__tab" id="tabs">
-              <button class="programs__button programs__button--general" id="tab" type="button" data-program="general">
-                <span>Общие</span>
-              </button>
-              <button class="programs__button programs__button--academic programs__button--select" type="button" data-program="academic">Академические</button>
+              <button class="programs__button programs__button--general" type="button" data-program="general">Общие</button>
+              <button class="programs__button programs__button--academic programs__button--select-academic" type="button" data-program="academic">Академические</button>
               <button class="programs__button programs__button--internships" type="button" data-program="internships">Стажировки</button>
               <button class="programs__button programs__button--volunteerism" type="button" data-program="volunteerism">Волонтерство</button>
               <button class="programs__button programs__button--religious" type="button" data-program="religious">Религиозные</button>
@@ -78,14 +76,14 @@
             <div class="programs__box">
               <div class="programs__item" id="general">
                 <h3>Общие</h3>
-                <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
-                <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+                <p class="programs__elem-js">Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+                <p class="programs__elem-js">Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
               </div>
 
               <div class="programs__item active" id="academic">
                 <h3>Академические</h3>
-                <p>Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
-                <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+                <p class="programs__elem-js">Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.</p>
+                <p class="programs__elem-js">Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
               </div>
 
               <div class="programs__item" id="internships">
@@ -116,9 +114,9 @@
           <h2>Хочу поехать!</h2>
           <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
 
-          <form class="intention__form">
+          <form class="intention__form forms-js" method="post" action="https://echo.htmlacademy.ru">
             <label class="visually-hidden" for="intention-user-phone">Телефон</label>
-            <input id="intention-user-phone" name="user-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required="">
+            <input class="user-phone-js" id="intention-user-phone" name="user-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required="">
             <button class="intention__button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>
           </form>
 
@@ -192,59 +190,59 @@
         <div class="questions__wrap">
           <h2>Частые вопросы</h2>
           <div class="questions__list">
-            <button class="questions__item">
+            <div class="questions__item" tabindex="1">
               <span>Кто организатор? Какие сроки у программы?</span>
-              <p id="one">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+              <p class="questions__elem-js" id="one">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
               <div class="questions__arrow" data-questions="one">
                 <div class="questions__arrow-left"></div>
                 <div class="questions__arrow-right"></div>
               </div>
-            </button>
+            </div>
 
-            <button class="questions__item">
+            <div class="questions__item" tabindex="2">
               <span>Что такое грант на обучение?</span>
-              <p id="two">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+              <p class="questions__elem-js" id="two">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
               <div class="questions__arrow" data-questions="two">
                 <div class="questions__arrow-left"></div>
                 <div class="questions__arrow-right"></div>
               </div>
-            </button>
+            </div>
 
-            <button class="questions__item">
+            <div class="questions__item" tabindex="3">
               <span>Как определяется стоимость программы?</span>
-              <p id="three">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+              <p class="questions__elem-js" id="three">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
               <div class="questions__arrow" data-questions="three">
                 <div class="questions__arrow-left"></div>
                 <div class="questions__arrow-right"></div>
               </div>
-            </button>
+            </div>
 
-            <button class="questions__item">
+            <div class="questions__item" tabindex="4">
               <span>Что такое грант на обучение?</span>
-              <p id="four">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+              <p class="questions__elem-js" id="four">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
               <div class="questions__arrow" data-questions="four">
                 <div class="questions__arrow-left"></div>
                 <div class="questions__arrow-right"></div>
               </div>
-            </button>
+            </div>
 
-            <button class="questions__item">
+            <div class="questions__item" tabindex="5">
               <span>Признаётся ли учеба в рамках проекта для дальнейшего обучения?</span>
-              <p id="five">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+              <p class="questions__elem-js" id="five">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
               <div class="questions__arrow" data-questions="five">
                 <div class="questions__arrow-left"></div>
                 <div class="questions__arrow-right"></div>
               </div>
-            </button>
+            </div>
 
-            <button class="questions__item">
+            <div class="questions__item" tabindex="6">
               <span>Как выглдядит полный процесс регистрации на программу «Маса»?</span>
-              <p id="six">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+              <p class="questions__elem-js" id="six">Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
               <div class="questions__arrow" data-questions="six">
                 <div class="questions__arrow-left"></div>
                 <div class="questions__arrow-right"></div>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </section>
@@ -288,7 +286,6 @@
             <h3>Наталья Дмитриева</h3>
             <div class="feedback__item"><p><span>Программа:</span> Арт-Тель, февраль-сетнябрь 2017</p></div>
             <p>Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
-            <p>С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
             <a class="feedback__detail" href="#">Читать подробнее</a>
             <ul class="feedback__social">
               <li>
@@ -350,7 +347,6 @@
             <h3>Дарья Степанова</h3>
             <div class="feedback__item"><p><span>Программа:</span> Арт-Тель, февраль-сетнябрь 2017</p></div>
             <p>Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
-            <p>С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
             <a class="feedback__detail" href="#">Читать подробнее</a>
             <ul class="feedback__social">
               <li>
@@ -412,7 +408,6 @@
             <h3>Екатерина Максимова</h3>
             <div class="feedback__item"><p><span>Программа:</span> Арт-Тель, февраль-сетнябрь 2017</p></div>
             <p>Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
-            <p>С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
             <a class="feedback__detail" href="#">Читать подробнее</a>
             <ul class="feedback__social">
               <li>
@@ -440,7 +435,11 @@
           </div>
 
           <div class="feedback__control">
-            <div class="feedback__counter"></div>
+            <div class="feedback__counter">
+              <span class="feedback__number"></span>
+              <span>&#47;</span>
+              <span class="feedback__total"></span>
+            </div>
             <div class="feedback__arrow">
               <a class="feedback__arrow-prev" aria-label="Показать предыдущую картинку">&#10094;</a>
               <a class="feedback__arrow-next" aria-label="Показать следующую картинку">&#10095;</a>
@@ -506,19 +505,19 @@
           <div class="details__map"></div>
         </div>
 
-        <form class="details__form">
+        <form class="details__form forms-js" method="post" action="https://echo.htmlacademy.ru">
           <div class="details__form-text">
             <h3>Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</h3>
             <p>Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!</p>
           </div>
           <div class="details__form-inner">
             <div class="details__form-item">
-              <label class="visually-hidden" for="user-name">Имя</label>
-              <input id="user-name" name="callback-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="">
+              <label class="visually-hidden" for="details-user-name">Имя</label>
+              <input class="user-name-js" id="details-user-name" name="user-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="">
             </div>
             <div class="details__form-item">
-              <label class="visually-hidden" for="user-phone">Телефон</label>
-              <input id="user-phone" name="user-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required="">
+              <label class="visually-hidden" for="details-user-phone">Телефон</label>
+              <input class="user-phone-js" id="details-user-phone" name="user-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required="">
             </div>
             <button class="details__form-button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>
           </div>
@@ -566,18 +565,17 @@
 
     </footer>
 
-
     <section class="callback">
       <form class="callback__form" method="post" action="https://echo.htmlacademy.ru">
         <h2>Заказать звонок</h2>
         <p>Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
         <div class="callback__item">
-          <label class="visually-hidden" for="user-name">Имя</label>
-          <input id="user-name" name="callback-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="">
+          <label class="visually-hidden" for="callback-user-name">Имя</label>
+          <input class="user-name-js" id="callback-user-name" name="user-name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="">
         </div>
         <div class="callback__item">
-          <label class="visually-hidden" for="user-phone">Телефон</label>
-          <input id="user-phone" name="user-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required="">
+          <label class="visually-hidden" for="callback-user-phone">Телефон</label>
+          <input class="user-phone-js" id="callback-user-phone" name="user-phone" placeholder="Телефон" type="tel" minlength="18" pattern="[^a-z]{18}" required="">
         </div>
 
         <button class="callback__button" type="submit" aria-label="Перезвоните мне">Перезвоните мне</button>
@@ -596,6 +594,10 @@
         <button class="success__button" type="submit" aria-label="Понятно">Понятно</button>
         <button class="success__close" type="button" aria-label="Закрыть форму"></button>
       </div>
+    </section>
+
+    <section class="cover">
+      <p class="cover-item">Учёба, путешествие и карьера для еврейской молодёжи</p>
     </section>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;"></script>

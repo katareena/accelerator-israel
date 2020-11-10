@@ -3,11 +3,11 @@
   var ESCAPE = 'Escape';
   var link = document.querySelector('.header__callback');
   var popup = document.querySelector('.callback');
-  var close = popup.querySelector('.callback__close');
+  var closeBtn = popup.querySelector('.callback__close');
   var form = popup.querySelector('.callback__form');
-  var nameUser = popup.querySelector('[name=callback-name]');
-  var phoneUser = popup.querySelector('[name=user-phone]');
-  var checkbox = document.querySelector('input[type=checkbox]');
+  var nameUser = popup.querySelector('.user-name-js');
+  var phoneUser = popup.querySelector('.user-phone-js');
+  var checkbox = popup.querySelector('input[type=checkbox]');
 
   var message = document.querySelector('.success');
   var buttonMessage = message.querySelector('.success__button');
@@ -22,14 +22,29 @@
     isStorageSupport = false;
   }
 
+  var preventScroll = function () {
+    var body = document.body;
+    body.style.height = '100vh';
+    body.style.overflowY = 'hidden';
+  }
+
+  var getScroll = function () {
+    const body = document.body;
+    body.style.position = '';
+    body.style.top = '';
+    body.style.height = '';
+    body.style.overflowY = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  }
+
   var openHeandler = function (evt) {
     evt.preventDefault();
     form.reset();
     popup.classList.add('callback--open');
     nameUser.focus();
-
+    preventScroll();
     form.addEventListener('submit', window.modalCallback.submitHeandler);
-    close.addEventListener('click', window.modalCallback.closeFormHeandler);
+    closeBtn.addEventListener('click', window.modalCallback.closeFormHeandler);
     phoneUser.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
     popup.addEventListener('click', window.modalCallback.closeOverlayHandler);
     window.addEventListener('keydown', window.modalCallback.closeEscHandler);
@@ -57,6 +72,7 @@
   var closeForm = function () {
     popup.classList.remove('callback--open');
     popup.classList.remove('callback--error');
+    getScroll();
     popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
     window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
   };
@@ -65,6 +81,7 @@
     evt.preventDefault();
     popup.classList.remove('callback--open');
     popup.classList.remove('callback--error');
+    getScroll();
     popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
     window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
   };
@@ -75,6 +92,7 @@
         evt.preventDefault();
         popup.classList.remove('callback--open');
         popup.classList.remove('callback--error');
+        getScroll();
         popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
         window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
       }
@@ -88,6 +106,7 @@
         evt.preventDefault();
         popup.classList.remove('callback--open');
         popup.classList.remove('callback--error');
+        getScroll();
         popup.removeEventListener('click', window.modalCallback.closeOverlayHandler);
         window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
       }
@@ -100,7 +119,9 @@
     closeFormHeandler: closeFormHeandler,
     closeForm: closeForm,
     closeEscHandler: closeEscHandler,
-    closeOverlayHandler: closeOverlayHandler
+    closeOverlayHandler: closeOverlayHandler,
+    preventScroll: preventScroll,
+    getScroll: getScroll
   };
 
   link.addEventListener('click', window.modalCallback.openHeandler);

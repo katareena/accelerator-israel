@@ -391,6 +391,12 @@
   }
 }
 
+.details__form-item label {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: none;
+  }
+}
+
 .details__form-item input {
   width: 250px;
   height: 59px;

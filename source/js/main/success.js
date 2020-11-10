@@ -4,10 +4,17 @@
   var message = document.querySelector('.success');
   var buttonMessage = message.querySelector('.success__button');
   var closeMessage = message.querySelector('.success__close');
+  var inputsPhoneUser = document.querySelectorAll('.user-phone-js');
+  var forms = document.querySelectorAll('.forms-js');
 
+  // --- хендлеры на все виды закрытия окна Успешной отправки ---
   var closeMessageHeandler = function (evt) {
     evt.preventDefault();
     message.classList.remove('success--open');
+    forms.forEach(function (el) {
+      el.reset();
+    });
+    window.modalCallback.getScroll();
   };
 
   var closeMessageEscHandler = function (evt) {
@@ -15,6 +22,10 @@
       if (message.classList.contains('success--open')) {
         evt.preventDefault();
         message.classList.remove('success--open');
+        forms.forEach(function (el) {
+          el.reset();
+        });
+        window.modalCallback.getScroll();
       }
     }
   };
@@ -25,17 +36,22 @@
       if (message.classList.contains('success--open')) {
         evt.preventDefault();
         message.classList.remove('success--open');
+        forms.forEach(function (el) {
+          el.reset();
+        });
+        window.modalCallback.getScroll();
       }
     }
   };
 
-  //--------
-  var intentionPhoneUser = document.querySelector('[name=user-phone]');
-
+  // --- хендлер на submit всех форм ---
   var submitHeandler = function (evt) {
     evt.preventDefault();
-    if (intentionPhoneUser.value) {
-      message.classList.add('success--open');
+    for (var i = 0; i < inputsPhoneUser.length; i++) {
+      if (inputsPhoneUser[i].value) {
+        message.classList.add('success--open');
+        window.modalCallback.preventScroll();
+      }
     }
   };
 
@@ -46,13 +62,14 @@
     submitHeandler: submitHeandler
   };
 
+  // --- обработчк на все формы для открытия окна Успешной отправки ---
+  forms.forEach(function (el) {
+    el.addEventListener('submit', window.success.submitHeandler);
+  });
+  // --- обработчики на все виды закрытия окна Успешной отправки ---
   window.addEventListener('keydown', window.success.closeMessageEscHandler);
   message.addEventListener('click', window.success.closeOverlayHandler);
   closeMessage.addEventListener('click', window.success.closeMessageHeandler);
   buttonMessage.addEventListener('click', window.success.closeMessageHeandler);
-
-  var intentionForm = document.querySelector('.intention__form');
-  intentionForm.addEventListener('submit', window.success.submitHeandler);
-  intentionPhoneUser.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
 
 })();
