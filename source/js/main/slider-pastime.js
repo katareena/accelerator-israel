@@ -22,13 +22,13 @@
         slideIndex = 1
       }
       if (n < 1) {
-          slideIndex = slides.length
+        slideIndex = slides.length
       }
       for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = 'none';
+        slides[i].style.display = 'none';
       }
       for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(' pastime__dot--activ', '');
+        dots[i].className = dots[i].className.replace(' pastime__dot--activ', '');
       }
       slides[slideIndex - 1].style.display = 'flex';
       dots[slideIndex - 1].className += ' pastime__dot--activ';

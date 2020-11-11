@@ -238,7 +238,7 @@
 .description__list li::after {
   content: counter(num);
   counter-increment: num;
-  display: inline-block;
+  display: block;
   position: absolute;
   top: 0;
   left: -60px;

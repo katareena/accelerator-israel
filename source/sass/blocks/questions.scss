@@ -161,8 +161,6 @@
   background-image: $gradient;
   background-size: 100%;
   background-clip: text;
-  // -webkit-background-clip: text;
-  // -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 
@@ -174,7 +172,6 @@
 }
 
 .questions__item p {
-  // display: none;
   width: 480px;
   font-size: 15px;
   line-height: calc(21 / 15);

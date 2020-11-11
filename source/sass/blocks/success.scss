@@ -2,6 +2,7 @@
   @include modal;
   display: none;
   z-index: 5000;
+  background-color: $modal-background;
 }
 
 .success--open {

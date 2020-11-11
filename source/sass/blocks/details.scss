@@ -262,7 +262,6 @@
   background-image: url("../img/map@1x.png");
   background-repeat: no-repeat;
   background-size: contain;
-  // position: relative;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/map@2x.png");
@@ -283,21 +282,6 @@
     }
   }
 }
-
-// маска для карты
-// .details__map::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 702px;
-//   height: 448px;
-//   background-image: url("../img/map-mask@1x.png");
-//   background-repeat: no-repeat;
-//   background-color: white;
-//   z-index: 999999;
-// }
-
 
 .details__form {
   width: 100%;

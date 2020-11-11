@@ -8,7 +8,6 @@
     var program = btnTarget.dataset.program;
 
     tabsContent.forEach(function (x) {
-      // x.classList.remove('active');
       x.style.display = 'none';
     });
 
@@ -17,7 +16,6 @@
       y.classList.remove('programs__button--select-' + programClass);
     });
 
-    // document.querySelector('#' + program).classList.add('active');
     document.querySelector('#' + program).style.display = 'block'
     btnTarget.classList.add('programs__button--select-' + program);
   }

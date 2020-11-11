@@ -483,7 +483,8 @@ a {
       display: -ms-flexbox;
       display: flex;
       margin-bottom: 28px;
-      overflow: hidden; } }
+      overflow: hidden;
+      position: relative; } }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .programs__tab {
       width: auto; } }
@@ -785,6 +786,42 @@ a {
     .programs__button--select-religious::before {
       left: 10px;
       top: 7px; } }
+
+.programs__control {
+  display: none; }
+  @media (max-width: 767px) {
+    .programs__control {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 320px;
+      height: 20px; } }
+
+.programs__control-prev {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 60px;
+  height: 50px;
+  margin-top: -22px;
+  padding: 16px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  z-index: 10; }
+
+.programs__control-next {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 60px;
+  height: 50px;
+  margin-top: -22px;
+  padding: 16px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  z-index: 10; }
 
 .intention {
   width: 100%;
@@ -1167,7 +1204,7 @@ a {
 .description__list li::after {
   content: counter(num);
   counter-increment: num;
-  display: inline-block;
+  display: block;
   position: absolute;
   top: 0;
   left: -60px;
@@ -1282,7 +1319,7 @@ a {
       line-height: 1.66; } }
 
 .pastime__inner p {
-  font-family: "Raleway", "Tahoma", sans-serif;
+  font-family: "Raleway", "Arial", sans-serif;
   font-weight: 800;
   font-size: 21px;
   line-height: calc(25 / 21);
@@ -3098,7 +3135,8 @@ a {
   left: 0;
   z-index: 5000;
   display: none;
-  z-index: 5000; }
+  z-index: 5000;
+  background-color: rgba(235, 235, 235, 0.95); }
   @media (max-width: 767px) {
     .success {
       height: auto; } }

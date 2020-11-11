@@ -8,7 +8,7 @@
   var forms = document.querySelectorAll('.forms-js');
 
   // --- хендлеры на все виды закрытия окна Успешной отправки ---
-  var closeMessageHeandler = function (evt) {
+  var closeMessageHandler = function (evt) {
     evt.preventDefault();
     message.classList.remove('success--open');
     forms.forEach(function (el) {
@@ -45,7 +45,7 @@
   };
 
   // --- хендлер на submit всех форм ---
-  var submitHeandler = function (evt) {
+  var submitHandler = function (evt) {
     evt.preventDefault();
     for (var i = 0; i < inputsPhoneUser.length; i++) {
       if (inputsPhoneUser[i].value) {
@@ -56,20 +56,20 @@
   };
 
   window.success = {
-    closeMessageHeandler: closeMessageHeandler,
+    closeMessageHandler: closeMessageHandler,
     closeMessageEscHandler: closeMessageEscHandler,
     closeOverlayHandler: closeOverlayHandler,
-    submitHeandler: submitHeandler
+    submitHandler: submitHandler
   };
 
   // --- обработчк на все формы для открытия окна Успешной отправки ---
   forms.forEach(function (el) {
-    el.addEventListener('submit', window.success.submitHeandler);
+    el.addEventListener('submit', window.success.submitHandler);
   });
   // --- обработчики на все виды закрытия окна Успешной отправки ---
   window.addEventListener('keydown', window.success.closeMessageEscHandler);
   message.addEventListener('click', window.success.closeOverlayHandler);
-  closeMessage.addEventListener('click', window.success.closeMessageHeandler);
-  buttonMessage.addEventListener('click', window.success.closeMessageHeandler);
+  closeMessage.addEventListener('click', window.success.closeMessageHandler);
+  buttonMessage.addEventListener('click', window.success.closeMessageHandler);
 
 })();

@@ -37,35 +37,35 @@
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 
-  var openHeandler = function (evt) {
+  var openHandler = function (evt) {
     evt.preventDefault();
     form.reset();
     popup.classList.add('callback--open');
     nameUser.focus();
     preventScroll();
-    form.addEventListener('submit', window.modalCallback.submitHeandler);
-    closeBtn.addEventListener('click', window.modalCallback.closeFormHeandler);
+    form.addEventListener('submit', window.modalCallback.submitHandler);
+    closeBtn.addEventListener('click', window.modalCallback.closeFormHandler);
     phoneUser.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
     popup.addEventListener('click', window.modalCallback.closeOverlayHandler);
     window.addEventListener('keydown', window.modalCallback.closeEscHandler);
   };
 
-  var submitHeandler = function (evt) {
+  var submitHandler = function (evt) {
     evt.preventDefault();
     if (!nameUser.value || !phoneUser.value || !checkbox.checked) {
       popup.classList.remove('callback--error');
       popup.classList.add('callback--error');
     } else {
       if (isStorageSupport) {
-        localStorage.setItem('nameUser', name.value);
-        localStorage.setItem('phoneUser', name.value);
+        localStorage.setItem('nameUser', nameUser.value);
+        localStorage.setItem('phoneUser', phoneUser.value);
       }
       message.classList.add('success--open');
       window.modalCallback.closeForm();
       window.addEventListener('keydown', window.success.closeMessageEscHandler);
       message.addEventListener('click', window.success.closeOverlayHandler);
-      closeMessage.addEventListener('click', window.success.closeMessageHeandler);
-      buttonMessage.addEventListener('click', window.success.closeMessageHeandler);
+      closeMessage.addEventListener('click', window.success.closeMessageHandler);
+      buttonMessage.addEventListener('click', window.success.closeMessageHandler);
     }
   };
 
@@ -77,7 +77,7 @@
     window.removeEventListener('keydown', window.modalCallback.closeEscHandler);
   };
 
-  var closeFormHeandler = function (evt) {
+  var closeFormHandler = function (evt) {
     evt.preventDefault();
     popup.classList.remove('callback--open');
     popup.classList.remove('callback--error');
@@ -114,9 +114,9 @@
   };
 
   window.modalCallback = {
-    openHeandler: openHeandler,
-    submitHeandler: submitHeandler,
-    closeFormHeandler: closeFormHeandler,
+    openHandler: openHandler,
+    submitHandler: submitHandler,
+    closeFormHandler: closeFormHandler,
     closeForm: closeForm,
     closeEscHandler: closeEscHandler,
     closeOverlayHandler: closeOverlayHandler,
@@ -124,6 +124,6 @@
     getScroll: getScroll
   };
 
-  link.addEventListener('click', window.modalCallback.openHeandler);
+  link.addEventListener('click', window.modalCallback.openHandler);
 
 })();

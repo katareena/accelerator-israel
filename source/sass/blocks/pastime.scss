@@ -89,7 +89,7 @@
 }
 
 .pastime__inner p {
-  font-family: "Raleway", "Tahoma", sans-serif;
+  font-family: "Raleway", "Arial", sans-serif;
   font-weight: 800;
   font-size: 21px;
   line-height: calc(25 / 21);
@@ -160,7 +160,7 @@
     margin-bottom: 16px;
     object-fit: cover;
 
-    display: flex; //js slider
+    display: flex; //устанавливается из slider-pastime.js
   }
 }
 
