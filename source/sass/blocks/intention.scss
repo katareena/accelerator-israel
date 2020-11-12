@@ -18,12 +18,23 @@
     background-size: contain;
   }
 
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    min-width: 768px;
+    max-width: 1023px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: none;
+  }
+
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 320px;
     min-height: 655px;
     padding-top: 55px;
     margin-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
 
     background-image: url("../img/flag-bg-mobile@1x.jpg");
     background-size: 320px 308px;
@@ -60,11 +71,20 @@
   width: 945px;
   margin: 0 auto;
 
+  @media (max-width: $tablet-width) {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   @media (max-width: $mobile-width) {
     width: 100%;
     padding-left: 4.8%;
     padding-right: 4.6%;
     margin: 0 auto;
+
+    display: block;
   }
 }
 

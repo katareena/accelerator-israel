@@ -16,6 +16,11 @@
     background-size: contain;
   }
 
+  @media (max-width: $tablet-width) {
+    min-width: 768px;
+    max-width: 1023px;
+  }
+
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
@@ -35,11 +40,16 @@
   width: 945px;
   margin: 0 auto;
 
+  @media (max-width: $tablet-width) {
+    width: 675px;
+    margin: 0 auto;
+  }
+
   @media (max-width: $mobile-width) {
-    width: 100%;
-    min-width: 320px;
-    max-width: 320px;
+    width: 320px;
     flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -271,6 +281,7 @@
   width: 100vw;
   padding-top: 18px;
 
+
   @media (max-width: $mobile-width) {
     width: inherit;
     padding-top: 0;
@@ -306,6 +317,10 @@
 
 .programs__item p {
   width: 550px;
+
+  @media (max-width: $tablet-width) {
+    width: 400px;
+  }
 
   @media (max-width: $mobile-width) {
     font-size: 14px;

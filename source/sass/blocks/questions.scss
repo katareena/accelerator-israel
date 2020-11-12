@@ -17,12 +17,23 @@
     background-image: url("../img/watercolor-bg-questions-desktop@2x.jpg");
   }
 
+
+  @media (max-width: $tablet-width) {
+    min-width: 768px;
+    max-width: 1023px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-image: none;
+  }
+
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
     min-height: 717px;
     padding-top: 0;
     padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
     margin-bottom: 92px;
     background-image: none;
   }
@@ -43,6 +54,10 @@
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/questions-desktop@2x.png");
     background-size: contain;
+  }
+
+  @media (max-width: $tablet-width) {
+    background-image: none;
   }
 
   @media (max-width: $mobile-width) {
@@ -67,6 +82,10 @@
   position: relative;
   z-index: 1;
 
+  @media (max-width: $tablet-width) {
+    margin: 0 auto;
+  }
+
   @media (max-width: $mobile-width) {
     width: 288px;
     margin: 0 auto;
@@ -86,10 +105,13 @@
     line-height: 1.23;
   }
 
+  @media (max-width: $tablet-width) {
+    text-align: center;
+  }
+
   @media (max-width: $mobile-width) {
     font-size: 32px;
     line-height: calc(39 / 32);
-    text-align: center;
     margin-bottom: 7px;
 
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

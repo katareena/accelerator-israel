@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-  var MAX_MOBILE_WIDTH = 767;
+  var MAX_TABLET_WIDTH = 1023;
   var slideIndex = 1;
 
   showSlidesPastime(slideIndex);
@@ -14,7 +14,7 @@
   }
 
   function showSlidesPastime(n) {
-    if(window.innerWidth <= MAX_MOBILE_WIDTH) {
+    if(window.innerWidth <= MAX_TABLET_WIDTH) {
       var i;
       var slides = document.getElementsByClassName('pastime__item');
       var dots = document.getElementsByClassName('pastime__dot');

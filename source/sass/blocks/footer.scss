@@ -8,6 +8,11 @@
   border-top: 1px solid rgba($text, 0.2);
   overflow: hidden;
 
+  @media (max-width: $tablet-width) {
+    min-width: 768px;
+    max-width: 1023px;
+  }
+
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
@@ -26,6 +31,11 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  @media (max-width: $tablet-width) {
+    min-width: 750px;
+    max-width: 1023px;
+  }
 
   @media (max-width: $mobile-width) {
     width: 320px;

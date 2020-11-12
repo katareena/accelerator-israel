@@ -18,6 +18,14 @@
     background-image: url("../img/header-bg-desktop@2x.jpg");
   }
 
+  @media (max-width: $tablet-width) {
+    min-width: 768px;
+    max-width: 1023px;
+    // background-size: 100% auto;
+    background-image: none;
+    background-color: $accent-decor-1;
+  }
+
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 320px;

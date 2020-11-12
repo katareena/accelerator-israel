@@ -14,10 +14,20 @@
     background-image: url("../img/watercolor-bg-feedback-desktop@2x.jpg");
   }
 
+  @media (max-width: $tablet-width) {
+    min-width: 768px;
+    max-width: 1023px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-image: none;
+  }
+
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
     margin-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
 
     background-image: url("../img/watercolor-bg-feedback-mobile@1x.jpg");
     background-position: top 525px right 0;
@@ -61,12 +71,19 @@
   position: relative;
   overflow: hidden;
 
+  @media (max-width: $tablet-width) {
+    min-width: 708px;
+    max-width: 963px;
+    min-height: 632px;
+    margin: 0 auto;
+  }
+
   @media (max-width: $mobile-width) {
     width: 100%;
     min-width: 288px;
     max-width: 288px;
     margin: 0 auto;
-    min-height: inherit;
+    min-height: 487px;
   }
 }
 
@@ -81,6 +98,12 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+
+  @media (max-width: $tablet-width) {
+    min-width: inherit;
+    max-width: inherit;
+    padding-left: 50%;
+  }
 
   @media (max-width: $mobile-width) {
     width: 100%;
