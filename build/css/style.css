@@ -508,9 +508,10 @@ a {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      margin-bottom: 28px;
+      height: 80px;
       overflow: hidden;
-      position: relative; } }
+      position: relative;
+      overflow-x: scroll; } }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .programs__tab {
       width: auto; } }
@@ -3543,53 +3544,5 @@ a {
       .success__close::after {
         top: -10px;
         right: 0; } }
-
-.cover {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 5000;
-  display: none;
-  background-color: #1b1b1b;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-  @media (max-width: 767px) {
-    .cover {
-      height: auto; } }
-  @media (max-width: 767px) {
-    .cover {
-      height: 100vh; } }
-
-.cover--show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.cover p {
-  width: 620px;
-  height: 320px;
-  margin: 0;
-  color: #606060;
-  font-weight: bold;
-  font-size: 43px;
-  line-height: calc(51 / 43);
-  padding-top: 61px;
-  padding-left: 48px;
-  padding-right: 101px; }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .cover p {
-      line-height: 1.19; } }
-  @media (max-width: 767px) {
-    .cover p {
-      height: 100vh;
-      padding-top: 30px;
-      padding-left: 20px;
-      padding-right: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

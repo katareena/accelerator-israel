@@ -90,9 +90,11 @@
     margin-right: 0;
     margin-left: -42px;
     display: flex;
-    margin-bottom: 28px;
+    height: 80px;
+    // margin-bottom: 28px;
     overflow: hidden;
     position: relative;
+    overflow-x: scroll;
   }
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

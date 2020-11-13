@@ -24,26 +24,9 @@
 
 'use strict';
 (function () {
-  var cover = document.querySelector('.cover');
-
-  var closeOverlayHandler = function (evt) {
-    window.matchesForIE.changeMatchesForIE();
-      if (cover.classList.contains('cover--show')) {
-        evt.preventDefault();
-        cover.classList.remove('cover--show');
-    }
-  };
-
-  document.addEventListener('click', closeOverlayHandler);
-
-})();
-
-'use strict';
-(function () {
   var getReadyPage = function () {
     var questions = document.querySelectorAll('.questions__elem-js');
     var programsItem = document.querySelectorAll('.programs__item');
-    var cover = document.querySelector('.cover');
 
     questions.forEach(function (el) {
       el.style.display = 'none';
@@ -54,8 +37,6 @@
         el.style.display = 'none';
       }
     });
-
-    cover.classList.add('cover--show');
   }
 
   document.addEventListener("DOMContentLoaded", getReadyPage);
