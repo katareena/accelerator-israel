@@ -28,7 +28,7 @@
     maskPhoneHandler: maskPhoneHandler
   };
 
-  // --- обработчк на все инпуты для применения формата ввода ---
+  // --- обработчк на все инпуты для применения формата ввода телефона ---
   var inputsPhoneUser = document.querySelectorAll('.user-phone-js');
   inputsPhoneUser.forEach(function (el) {
     el.addEventListener('keydown', window.maskPhone.maskPhoneHandler);
