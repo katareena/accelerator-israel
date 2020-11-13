@@ -173,16 +173,6 @@
 }
 
 .pastime__item {
-  // @media (max-width: $tablet-width) {
-  //   width: 288px;
-  //   height: 400px;
-  //   margin: 0 auto;
-  //   margin-bottom: 16px;
-  //   object-fit: cover;
-
-  //   display: flex; //устанавливается из slider-pastime.js
-  // }
-
   @media (max-width: $tablet-width) {
     width: 288px;
     height: 400px;
