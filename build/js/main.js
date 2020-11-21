@@ -1,12 +1,12 @@
 'use strict';
 (function () {
-  var arrows = document.querySelectorAll('.questions__arrow');
-
+  var items = document.querySelectorAll('.questions__item');
 
   var moveAccordion = function (elem) {
 
     var btnTarget = elem.currentTarget;
     var questions = btnTarget.dataset.questions;
+
     if (btnTarget.classList.contains('open')) {
       document.querySelector('#' + questions).style.display = 'none';
       btnTarget.classList.remove('open');
@@ -16,7 +16,7 @@
     }
   }
 
-  arrows.forEach(function (el) {
+  items.forEach(function (el) {
     el.addEventListener('click', moveAccordion);
   });
 
@@ -217,15 +217,18 @@
 
   showSlidesFeedback(slideIndex);
 
-  function nextSlide() {
+  function nextSlide(evt) {
+    evt.preventDefault();
     showSlidesFeedback(slideIndex += 1);
   }
 
-  function prevSlide() {
+  function prevSlide(evt) {
+    evt.preventDefault();
     showSlidesFeedback(slideIndex -= 1);
   }
 
   function showSlidesFeedback(n) {
+
       var i;
       var slides = document.getElementsByClassName('feedback__slide');
       var numberValue = document.querySelector('.feedback__number');
@@ -259,14 +262,15 @@
 (function () {
   var MAX_TABLET_WIDTH = 1023;
   var slideIndex = 1;
-
   showSlidesPastime(slideIndex);
 
-  function plusSlide() {
+  function plusSlide(evt) {
+    evt.preventDefault();
     showSlidesPastime(slideIndex += 1);
   }
 
-  function minusSlide() {
+  function minusSlide(evt) {
+    evt.preventDefault();
     showSlidesPastime(slideIndex -= 1);
   }
 
@@ -275,6 +279,8 @@
       var i;
       var slides = document.getElementsByClassName('pastime__item');
       var dots = document.getElementsByClassName('pastime__dot');
+
+
       if (n > slides.length) {
         slideIndex = 1
       }

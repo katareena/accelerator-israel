@@ -9,8 +9,8 @@
   margin-bottom: 58px;
 
   background-image: url("../img/bg-gallery-desktop@1x.jpg");
+  background-color: $accent-decor-1;
   background-repeat: no-repeat;
-  background-position: left 5px top 0;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/bg-gallery-desktop@2x.jpg");
@@ -30,11 +30,33 @@
     max-width: 767px;
     min-height: auto;
     padding-top: 0;
-    background-image: url("../img/bg-gallery-mobile@1x.jpg");
-    background-position: center top 45px;
+    // background-image: url("../img/bg-gallery-mobile@1x.jpg");
+    // background-position: center top 45px;
+    background-color: transparent;
     margin-bottom: 80px;
     padding-left: 0;
     padding-right: 0;
+    position: relative;
+
+    // @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    //   background-image: url("../img/bg-gallery-mobile@2x.jpg");
+    //   background-size: contain;
+    // }
+  }
+}
+
+.gallery::before {
+  @media (max-width: $mobile-width) {
+    position: absolute;
+    content: "";
+    width: 320px;
+    height: 272px;
+    top: 45px;
+    left: calc(50vw - 160px);
+    background-image: url("../img/bg-gallery-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-color: $accent-decor-1;
+    z-index: -1;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/bg-gallery-mobile@2x.jpg");
@@ -103,6 +125,7 @@
     width: 272px;
     margin: 0 auto;
     margin-bottom: 57px;
+    text-align: left;
 
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       line-height: 1.63;

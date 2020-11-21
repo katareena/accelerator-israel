@@ -441,3 +441,10 @@
     top: 20%;
   }
 }
+
+.pastime__prev:hover,
+.pastime__next:hover,
+.pastime__prev:focus,
+.pastime__next:focus {
+  color: $accent-decor-3;
+}

@@ -2,14 +2,15 @@
 (function () {
   var MAX_TABLET_WIDTH = 1023;
   var slideIndex = 1;
-
   showSlidesPastime(slideIndex);
 
-  function plusSlide() {
+  function plusSlide(evt) {
+    evt.preventDefault();
     showSlidesPastime(slideIndex += 1);
   }
 
-  function minusSlide() {
+  function minusSlide(evt) {
+    evt.preventDefault();
     showSlidesPastime(slideIndex -= 1);
   }
 
@@ -18,6 +19,8 @@
       var i;
       var slides = document.getElementsByClassName('pastime__item');
       var dots = document.getElementsByClassName('pastime__dot');
+
+
       if (n > slides.length) {
         slideIndex = 1
       }

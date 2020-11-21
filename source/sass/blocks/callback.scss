@@ -112,6 +112,8 @@
   height: 59px;
   padding: 19px 61px;
 
+  order: 1;
+
   @include button;
 
   @media (max-width: $mobile-width) {
@@ -122,6 +124,8 @@
 }
 
 .callback__checkbox {
+  order: 2;
+
   @media (max-width: $mobile-width) {
     @include blockToCenter;
   }
@@ -172,13 +176,18 @@
   border-radius: 2px;
 }
 
-.callback__checkbox label:hover::before {
-  opacity: 0.4;
+.callback__checkbox label:hover::before,
+.callback__checkbox label:focus::before {
+  opacity: 0.5;
+  border: 2px solid $accent-decor-3;
+  border-image: none;
 }
 
 .callback__checkbox-input:checked:focus + .callback__checkbox-label::before,
 .callback__checkbox-input:not(:checked):focus + .callback__checkbox-label::before {
-  opacity: 0.4;
+  opacity: 0.5;
+  border: 2px solid $accent-decor-3;
+  border-image: none;
 }
 
 .callback__checkbox label::after {

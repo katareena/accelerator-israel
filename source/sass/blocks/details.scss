@@ -161,12 +161,13 @@
   }
 }
 
-.details__location span {
+.details__location a {
   font-size: 14px;
   letter-spacing: -0.1px;
   padding-bottom: 2px;
   margin-left: 15px;
   border-bottom: 1px dashed $accent-decor-3;
+  cursor: pointer;
 
   font-weight: 500;
   text-transform: uppercase;
@@ -176,6 +177,16 @@
     margin-left: 17px;
     letter-spacing: 0.3px;
   }
+}
+
+.details__location a:hover,
+.details__location a:focus {
+  color: $accent-decor-3;
+}
+
+
+.details__location a:active {
+  color: rgba($accent-decor-3, 0.5);
 }
 
 .details__curator {
@@ -196,6 +207,7 @@
 
   @media (max-width: $mobile-width) {
     margin-bottom: 15px;
+    margin-left: 3px;
   }
 }
 
@@ -372,9 +384,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    width: auto;
-    margin-right: 0;
-    margin-bottom: 34px;
+    text-align: left;
   }
 }
 

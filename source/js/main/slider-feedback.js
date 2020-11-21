@@ -4,15 +4,18 @@
 
   showSlidesFeedback(slideIndex);
 
-  function nextSlide() {
+  function nextSlide(evt) {
+    evt.preventDefault();
     showSlidesFeedback(slideIndex += 1);
   }
 
-  function prevSlide() {
+  function prevSlide(evt) {
+    evt.preventDefault();
     showSlidesFeedback(slideIndex -= 1);
   }
 
   function showSlidesFeedback(n) {
+
       var i;
       var slides = document.getElementsByClassName('feedback__slide');
       var numberValue = document.querySelector('.feedback__number');
