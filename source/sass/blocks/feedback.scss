@@ -298,6 +298,18 @@
   }
 }
 
+.feedback__arrow-prev:hover,
+.feedback__arrow-prev:focus,
+.feedback__arrow-next:hover,
+.feedback__arrow-next:focus {
+  color: $accent-decor-1;
+}
+
+.feedback__arrow-prev:active,
+.feedback__arrow-next:active {
+  opacity: 0.5;
+}
+
 .feedback__social {
   list-style: none;
   margin: 0;

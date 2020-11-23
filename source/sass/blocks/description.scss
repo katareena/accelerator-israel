@@ -80,17 +80,18 @@
 }
 
 .description__wrap {
-  // width: 1024px;
-  // width: auto;
+  width: 1024px;
+  // width: 40%;
+  // transform: translateX(-50%);
 
   min-height: 707px;
-  // padding-left: 528px;
-  padding-left: calc(100vw - 49%);
-  // padding-right: 180px;
+  padding-left: 528px;
+  // padding-left: calc(100% - 48.8%);
+  padding-right: 11%;
   padding-top: 30px;
   // margin: 0 auto;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 10px;
 
   @media (max-width: $tablet-width) {
     width: 600px;
