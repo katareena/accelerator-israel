@@ -249,6 +249,15 @@
   }
 }
 
+.feedback__detail:hover,
+.feedback__detail:focus {
+  color: $accent-decor-1;
+}
+
+.feedback__detail:active {
+  opacity: 0.5;
+}
+
 .feedback__control {
   position: absolute;
   width: 120px;
@@ -334,7 +343,6 @@
     margin-right: 15px;
   }
 }
-
 
 .feedback__social-a {
   color: rgba($black, 0.16);

@@ -318,9 +318,10 @@
   }
 
   @media (max-width: $tablet-width) {
-    flex: 0 0 448px;
+    flex-basis: auto;
     width: 568px;
     height: 448px;
+    background-size: 568px 430px;
     margin: 0 auto;
   }
 
@@ -333,6 +334,7 @@
     margin-bottom: 22px;
 
     background-image: url("../img/map-mobile@1x.jpg");
+    background-size: contain;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/map-mobile@2x.jpg");
@@ -377,13 +379,14 @@
   padding-top: 2px;
 
   @media (max-width: $tablet-width) {
-    width: auto;
-    margin-right: 0;
+    width: 500px;
+    margin: 0 auto;
     margin-bottom: 34px;
     text-align: center;
   }
 
   @media (max-width: $mobile-width) {
+    width: auto;
     text-align: left;
   }
 }
@@ -426,9 +429,9 @@
   display: flex;
 
   @media (max-width: $tablet-width) {
-    width: auto;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    // width: 708px;
+    margin: 0 auto;
+    flex-direction: column;
   }
 
   @media (max-width: $mobile-width) {
@@ -441,6 +444,10 @@
 .details__form-item {
   margin-right: 24px;
   margin-bottom: 30px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
 
   @media (max-width: $mobile-width) {
     margin-right: 0;
@@ -473,6 +480,10 @@
     line-height: 1.18;
   }
 
+  @media (max-width: $tablet-width) {
+    width: 400px;
+  }
+
   @media (max-width: $mobile-width) {
     width: 288px;
 
@@ -498,6 +509,10 @@
   padding: 19px 40px;
 
   @include button;
+
+  @media (max-width: $tablet-width) {
+    margin: 0 auto;
+  }
 
   @media (max-width: $mobile-width) {
     width: 264px;

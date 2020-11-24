@@ -2,6 +2,8 @@
 (function () {
   var MAX_TABLET_WIDTH = 1023;
   var slideIndex = 1;
+  var slider = document.querySelector('.pastime__inner');
+
   showSlidesPastime(slideIndex);
 
   function plusSlide(evt) {

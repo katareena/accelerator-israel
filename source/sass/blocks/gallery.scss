@@ -23,6 +23,8 @@
     padding-left: 30px;
     padding-right: 30px;
     background-image: none;
+    background-color: transparent;
+    min-height: auto;
   }
 
   @media (max-width: $mobile-width) {
@@ -30,18 +32,11 @@
     max-width: 767px;
     min-height: auto;
     padding-top: 0;
-    // background-image: url("../img/bg-gallery-mobile@1x.jpg");
-    // background-position: center top 45px;
     background-color: transparent;
     margin-bottom: 80px;
     padding-left: 0;
     padding-right: 0;
     position: relative;
-
-    // @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    //   background-image: url("../img/bg-gallery-mobile@2x.jpg");
-    //   background-size: contain;
-    // }
   }
 }
 
@@ -66,15 +61,14 @@
 }
 
 .gallery__wrap {
-  // width: 1024px;
-  // padding-left: 45.9%;
-  // margin: 0 auto;
   width: 400px;
-  margin-left: auto;
-  margin-right: 0;
+  margin-left: 58.4vw;
+  margin-right: 1vw;
+
 
   @media (max-width: $tablet-width) {
     width: 600px;
+    margin: 0 auto;
     padding-left: 0;
 
     display: flex;

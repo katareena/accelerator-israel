@@ -22,7 +22,7 @@
     min-width: 768px;
     max-width: 1023px;
     background-image: none;
-    background-color: $accent-decor-1;
+    height: 750px;
   }
 
   @media (max-width: $mobile-width) {
@@ -33,6 +33,7 @@
     margin-top: 32px;
     background-size: auto 605px;
     background-image: url("../img/header-bg-mobile@1x.jpg");
+    background-color: $accent-decor-1;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/header-bg-mobile@2x.jpg");
@@ -130,6 +131,12 @@
   color: $accent-decor-1;
   border-bottom: 1px dashed $accent-decor-1;
 }
+
+.header__tel:active,
+.header__callback:active {
+  opacity: 0.5;
+}
+
 
 .header h1 {
   @include text-reset;

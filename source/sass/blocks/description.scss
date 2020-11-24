@@ -2,14 +2,18 @@
   width: 100%;
   min-width: 1024px;
   max-width: 1366px;
+  padding-top: 30px;
   margin: 0 auto;
   padding-bottom: 160px;
   background-image: url("../img/watercolor-bg-description-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: top -200px right 0;
+  background-position: top -170px left 0;
   background-size: cover;
   z-index: -1;
   position: relative;
+
+  display: flex;
+  padding-left: 12px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/watercolor-bg-description-desktop@2x.jpg");
@@ -38,32 +42,9 @@
 
 
 .description::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 581px;
-  height: 707px;
-  background-image: url("../img/description-desktop@1x.png");
-  background-repeat: no-repeat;
-  background-size: 581px 707px;
-  background-position: 12px 0;
-  z-index: -1;
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/description-desktop@2x.png");
-    background-size: contain;
-  }
-
-  @media (max-width: $tablet-width) {
-    width: 760px;
-    padding-left: 0;
-    padding-right: 0;
-
-    background-image: none;
-  }
-
   @media (max-width: $mobile-width) {
+    content: "";
+    position: absolute;
     top: 275px;
     right: 0;
     width: 320px;
@@ -72,6 +53,7 @@
     background-repeat: no-repeat;
     background-size: 216px 199px;
     background-position: top 0 left 105px;
+    z-index: -1;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/stamp-mobile@2x.jpg");
@@ -79,19 +61,31 @@
   }
 }
 
-.description__wrap {
-  width: 1024px;
-  // width: 40%;
-  // transform: translateX(-50%);
+.description__pic {
+  width: 581px;
+  height: 707px;
+  background-image: url("../img/description-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-size: 581px 707px;
+  flex-shrink: 0;
+  margin-right: 7.9vw;
 
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/description-desktop@2x.png");
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 0;
+    height: 0;
+    background-image: none;
+  }
+}
+
+.description__wrap {
+  flex-shrink: 1;
   min-height: 707px;
-  padding-left: 528px;
-  // padding-left: calc(100% - 48.8%);
-  padding-right: 11%;
   padding-top: 30px;
-  // margin: 0 auto;
-  margin-left: auto;
-  margin-right: 10px;
+  margin-right: 11vw;
 
   @media (max-width: $tablet-width) {
     width: 600px;
@@ -149,7 +143,7 @@
   font-weight: 500;
   font-size: 17px;
   line-height: calc(29 / 17);
-  width: 450px;
+  width: inherit;
   margin-bottom: 8px;
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

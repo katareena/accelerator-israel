@@ -5,9 +5,10 @@
   min-height: 994px;
   margin: 0 auto;
   margin-bottom: 15px;
-  padding-top: 79px;
+  padding-top: 78px;
   padding-bottom: 140px;
   position: relative;
+  display: flex;
 
   background-image: url("../img/watercolor-bg-questions-desktop@1x.jpg");
   background-repeat: no-repeat;
@@ -44,17 +45,17 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 645px;
-  height: 887px;
+  // width: 645px;
+  // height: 887px;
 
-  background-image: url("../img/questions-desktop@1x.png");
-  background-repeat: no-repeat;
-  background-position: right 0 top 79px;
+  // background-image: url("../img/questions-desktop@1x.png");
+  // background-repeat: no-repeat;
+  // background-position: right 0 top 79px;
 
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/questions-desktop@2x.png");
-    background-size: contain;
-  }
+  // @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+  //   background-image: url("../img/questions-desktop@2x.png");
+  //   background-size: contain;
+  // }
 
   @media (max-width: $tablet-width) {
     background-image: none;
@@ -75,7 +76,24 @@
   }
 }
 
+.questions__pic {
+  width: 645px;
+  height: 887px;
+  flex-shrink: 1;
+
+  background-image: url("../img/questions-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: right 0 top 0;
+  background-size: contain;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/questions-desktop@2x.png");
+    background-size: contain;
+  }
+}
+
 .questions__wrap {
+  flex-shrink: 0;
   width: 560px;
   margin-left: 110px;
   margin-right: auto;
