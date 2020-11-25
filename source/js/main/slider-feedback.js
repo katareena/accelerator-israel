@@ -15,7 +15,6 @@
   }
 
   function showSlidesFeedback(n) {
-
       var i;
       var slides = document.getElementsByClassName('feedback__slide');
       var numberValue = document.querySelector('.feedback__number');
@@ -43,4 +42,5 @@
 
   prevBtnFdb.addEventListener('click', prevSlide);
   nextBtnFdb.addEventListener('click', nextSlide);
+
 })();

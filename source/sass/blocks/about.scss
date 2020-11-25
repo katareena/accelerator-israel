@@ -2,7 +2,7 @@
   width: 100%;
   min-width: 1024px;
   max-width: 1366px;
-  padding-top: 18px;
+  padding-top: 20px;
   height: 780px;
   margin: 0 auto;
 
@@ -81,17 +81,22 @@
   @media (max-width: $tablet-width) {
     width: 600px;
     display: block;
-    margin: 0 auto;
   }
 
   @media (max-width: $mobile-width) {
     width: 320px;
+    height: 224px;
   }
 }
 
 .about__video img {
   width: 870px;
   height: 460px;
+
+  @media (max-width: $tablet-width) {
+    width: 600px;
+    height: 400px;
+  }
 
   @media (max-width: $mobile-width) {
     width: 320px;
@@ -106,7 +111,7 @@
   position: absolute;
   width: 96px;
   height: 96px;
-  top: calc(50% - 51px);
+  top: calc(50% - 54px);
   left: calc(50% - 56px);
 
   cursor: pointer;

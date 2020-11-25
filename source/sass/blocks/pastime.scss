@@ -20,7 +20,7 @@
 
   @media (max-width: $tablet-width) {
     min-width: 320px;
-    max-width: 767px;
+    max-width: 600px;
     background-image: none;
     padding-bottom: 0;
     margin-bottom: 82px;
@@ -34,9 +34,9 @@
   margin: 0 auto;
 
   @media (max-width: $tablet-width) {
-    width: 760px;
-    min-width: 760px;
-    max-width: 760px;
+    width: auto;
+    min-width: auto;
+    max-width: auto;
     margin: 0 auto;
   }
 
@@ -148,9 +148,9 @@
   margin-top: -20px;
 
   @media (max-width: $tablet-width) {
-    width: 100%;
-    min-width: 767px;
-    max-width: 1023px;
+    width: auto;
+    min-width: auto;
+    max-width: auto;
     display: block;
     margin-top: 0;
     height: 400px;

@@ -9,7 +9,7 @@
 
   background-image: url("../img/sketch-bg-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: bottom 110px right;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/sketch-bg-desktop@2x.jpg");
@@ -87,7 +87,7 @@
 
 .programs__tab {
   width: 230px;
-  margin-right: 30px;
+  margin-right: 32px;
 
   @media (max-width: $mobile-width) {
     // width: 362px;

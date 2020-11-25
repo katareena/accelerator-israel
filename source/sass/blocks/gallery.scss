@@ -9,7 +9,7 @@
   margin-bottom: 58px;
 
   background-image: url("../img/bg-gallery-desktop@1x.jpg");
-  background-color: $accent-decor-1;
+  background-color: $option-color;
   background-repeat: no-repeat;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -22,6 +22,7 @@
     max-width: 1023px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 20px;
     background-image: none;
     background-color: transparent;
     min-height: auto;
@@ -31,38 +32,45 @@
     min-width: 320px;
     max-width: 767px;
     min-height: auto;
+    height: auto;
     padding-top: 0;
     background-color: transparent;
     margin-bottom: 80px;
     padding-left: 0;
     padding-right: 0;
     position: relative;
-  }
-}
 
-.gallery::before {
-  @media (max-width: $mobile-width) {
-    position: absolute;
-    content: "";
-    width: 320px;
-    height: 272px;
-    top: 45px;
-    left: calc(50vw - 160px);
     background-image: url("../img/bg-gallery-mobile@1x.jpg");
     background-repeat: no-repeat;
-    background-color: $accent-decor-1;
-    z-index: -1;
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/bg-gallery-mobile@2x.jpg");
-      background-size: contain;
-    }
+    background-size: contain;
+    background-position: bottom 75px center;
   }
 }
+
+// .gallery::before {
+//   @media (max-width: $mobile-width) {
+//     position: absolute;
+//     content: "";
+//     width: 320px;
+//     height: 272px;
+//     top: 45px;
+//     left: calc(50vw - 160px);
+//     background-image: url("../img/bg-gallery-mobile@1x.jpg");
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-color: $accent-decor-1;
+//     z-index: -1;
+
+//     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+//       background-image: url("../img/bg-gallery-mobile@2x.jpg");
+//       background-size: contain;
+//     }
+//   }
+// }
 
 .gallery__wrap {
   width: 400px;
-  margin-left: 58.4vw;
+  margin-left: 58.4%;
   margin-right: 1vw;
 
 
@@ -78,7 +86,10 @@
   }
 
   @media (max-width: $mobile-width) {
-    width: 296px;
+    width: 100%;
+    min-width: 296px;
+    max-width: 767px;
+    // width: 296px;
     padding-left: 0;
     display: block;
   }

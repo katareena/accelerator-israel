@@ -334,6 +334,7 @@
     margin-bottom: 22px;
 
     background-image: url("../img/map-mobile@1x.jpg");
+    background-color: $option-color;
     background-size: contain;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {

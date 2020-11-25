@@ -46,4 +46,16 @@
   prevBtn.addEventListener('click', minusSlide);
   nextBtn.addEventListener('click', plusSlide);
 
+
+// для мобильного
+  // var swiper = new Swiper('.swiper-container', {
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //   },
+  // });
+
+  // window.sliderPastime = {
+  //   swiper: swiper
+  // }
+
 })();

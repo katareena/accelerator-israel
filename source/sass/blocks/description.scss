@@ -2,39 +2,38 @@
   width: 100%;
   min-width: 1024px;
   max-width: 1366px;
-  padding-top: 30px;
   margin: 0 auto;
+  padding-top: 50px;
   padding-bottom: 160px;
+  padding-left: 12px;
+  position: relative;
+  display: flex;
+
   background-image: url("../img/watercolor-bg-description-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: top -170px left 0;
+  background-position: top -150px left 0;
   background-size: cover;
-  z-index: -1;
-  position: relative;
-
-  display: flex;
-  padding-left: 12px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/watercolor-bg-description-desktop@2x.jpg");
   }
 
   @media (max-width: $tablet-width) {
-    width: 100%;
     min-width: 760px;
     max-width: 1023px;
     padding-left: 30px;
     padding-right: 30px;
+    background-position: top -100px left 0;
   }
 
   @media (max-width: $mobile-width) {
     min-width: 320px;
     max-width: 767px;
+    margin: 0 auto;
     margin-top: 50px;
-    margin-left: 0;
     background-image: none;
     padding-bottom: 0;
-    margin-bottom: 80px;
+    margin-bottom: 55px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -62,42 +61,51 @@
 }
 
 .description__pic {
-  width: 581px;
-  height: 707px;
+  width: 580px;
+  height: auto;
+  flex-shrink: 1;
+  margin-right: 107px;
+
   background-image: url("../img/description-desktop@1x.png");
   background-repeat: no-repeat;
-  background-size: 581px 707px;
-  flex-shrink: 0;
-  margin-right: 7.9vw;
+  background-size: contain;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/description-desktop@2x.png");
+    background-size: contain;
   }
 
   @media (max-width: $tablet-width) {
     width: 0;
     height: 0;
+    display: none;
     background-image: none;
   }
 }
 
 .description__wrap {
-  flex-shrink: 1;
+  width: 507px;
   min-height: 707px;
   padding-top: 30px;
-  margin-right: 11vw;
+  margin-right: 10px;
+  flex-shrink: 1;
+  flex-grow: 0;
+
 
   @media (max-width: $tablet-width) {
     width: 600px;
     padding-left: 0;
     padding-right: 0;
+    margin: 0 auto;
   }
 
   @media (max-width: $mobile-width) {
+    // width: 750px;
     width: 288px;
-    padding-left: 0;
-    padding-right: 0;
+    // padding-left: 16px;
+    // padding-right: 16px;
     padding-top: 0;
+    margin: 0 auto;
   }
 }
 
