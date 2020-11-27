@@ -47,27 +47,6 @@
   }
 }
 
-// .gallery::before {
-//   @media (max-width: $mobile-width) {
-//     position: absolute;
-//     content: "";
-//     width: 320px;
-//     height: 272px;
-//     top: 45px;
-//     left: calc(50vw - 160px);
-//     background-image: url("../img/bg-gallery-mobile@1x.jpg");
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-color: $accent-decor-1;
-//     z-index: -1;
-
-//     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-//       background-image: url("../img/bg-gallery-mobile@2x.jpg");
-//       background-size: contain;
-//     }
-//   }
-// }
-
 .gallery__wrap {
   width: 400px;
   margin-left: 58.4%;
