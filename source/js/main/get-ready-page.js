@@ -1,6 +1,7 @@
 'use strict';
 (function () {
-  var MIN_TABLET_WIDTH = 767;
+  var MIN_WIDTH = 767;
+  var MAX_WIDTH = 1023;
 
   var getReadyPage = function () {
     var questions = document.querySelectorAll('.questions__elem-js');
@@ -14,11 +15,16 @@
       if (!el.classList.contains('active')) {
         el.style.display = 'none';
       }
+
+    if(window.innerWidth <= MAX_WIDTH) {
+      var gallery = document.querySelector('.pastime__inner');
+      gallery.classList.add('pastime__inner--slider');
+    }
     });
   }
 
   var matchHeight = function () {
-    if(window.innerWidth >= MIN_TABLET_WIDTH) {
+    if(window.innerWidth >= MIN_WIDTH) {
       var maxColHeight = 0; // максимальная высота, первоначально 0
       var columns = document.getElementsByClassName('feedback__slide'); // получаем массив колонок (всех элементов класса column)
 

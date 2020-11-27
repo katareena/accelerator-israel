@@ -89,7 +89,6 @@
     width: 100%;
     min-width: 296px;
     max-width: 767px;
-    // width: 296px;
     padding-left: 0;
     display: block;
   }
@@ -124,6 +123,10 @@
 
   @media (max-width: $tablet-width) {
     color: rgba($text, 0.87);
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      width: inherit;
+    }
   }
 
   @media (max-width: $mobile-width) {

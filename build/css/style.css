@@ -392,7 +392,7 @@ a {
       padding: 0; } }
   @media (max-width: 767px) {
     .about__button {
-      top: calc(50% - 45px); } }
+      top: calc(50% - 40px); } }
 
 .about__circle {
   color: #ffffff;
@@ -706,6 +706,9 @@ a {
   @media (max-width: 1023px) {
     .programs__item p {
       width: 400px; } }
+  @media all and (max-width: 1023px) and (-ms-high-contrast: none), (max-width: 1023px) and (-ms-high-contrast: active) {
+    .programs__item p {
+      width: inherit; } }
   @media (max-width: 767px) {
     .programs__item p {
       font-size: 14px;
@@ -1048,12 +1051,12 @@ a {
       min-width: 320px;
       max-width: 767px;
       margin: 0 auto;
-      margin-top: 50px;
       background-image: none;
-      padding-bottom: 0;
       margin-bottom: 55px;
+      padding-top: 30px;
       padding-left: 0;
-      padding-right: 0; } }
+      padding-right: 0;
+      padding-bottom: 0; } }
 
 @media (max-width: 767px) {
   .description::after {
@@ -1308,7 +1311,6 @@ a {
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 90px;
-  overflow: hidden;
   background-image: url("../img/watercolor-bg-pastime-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: left 0 top -40px; }
@@ -1322,7 +1324,8 @@ a {
       max-width: 600px;
       background-image: none;
       padding-bottom: 0;
-      margin-bottom: 82px; } }
+      margin-bottom: 82px;
+      height: 100%; } }
 
 .pastime__wrap {
   width: 100%;
@@ -1374,6 +1377,9 @@ a {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .pastime__wrap p {
       line-height: 1.71; } }
+  @media (max-width: 1023px) {
+    .pastime__wrap p {
+      width: inherit; } }
   @media (max-width: 767px) {
     .pastime__wrap p {
       font-size: 16px;
@@ -1426,31 +1432,23 @@ a {
   margin-top: -20px; }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .pastime__inner {
-      grid-template-columns: 230px 211px 211px auto 211px;
-      grid-template-rows: 385px 340px;
-      gap: 2.4%; } }
+      display: block; } }
   @media (max-width: 1023px) {
     .pastime__inner {
       width: auto;
       min-width: auto;
       max-width: auto;
-      display: block;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
       margin-top: 0;
-      height: 400px;
       margin-bottom: 16px;
-      position: relative;
-      overflow: hidden; } }
-  @media (max-width: 767px) {
-    .pastime__inner {
-      width: inherit;
-      min-width: auto;
-      max-width: auto;
-      display: block;
-      margin-top: 0;
-      height: 400px;
-      margin-bottom: 16px;
-      position: relative;
-      overflow: hidden; } }
+      position: relative; } }
+
+@media (max-width: 1023px) {
+  .pastime__inner--slider {
+    height: 400px;
+    overflow: hidden; } }
 
 @media (max-width: 1023px) {
   .pastime__item {
@@ -1462,7 +1460,9 @@ a {
        object-fit: cover;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; } }
+    display: flex;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; } }
 
 .pastime__item--history {
   grid-column-start: 1;
@@ -1481,7 +1481,8 @@ a {
     .pastime__item--history {
       padding-left: 0;
       padding-top: 0;
-      background-image: url("../img/history-mobile@1x.jpg"); } }
+      background-image: url("../img/history-mobile@1x.jpg");
+      background-size: cover; } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .pastime__item--history {
       background-image: url("../img/history-mobile@2x.jpg"); } }
@@ -1513,7 +1514,8 @@ a {
       display: flex;
       margin-top: 0;
       padding-top: 0;
-      background-image: url("../img/language-mobile@1x.jpg"); } }
+      background-image: url("../img/language-mobile@1x.jpg");
+      background-size: cover; } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .pastime__item--language {
       background-image: url("../img/language-mobile@2x.jpg"); } }
@@ -1542,7 +1544,8 @@ a {
     .pastime__item--profession {
       margin-top: 0;
       padding-left: 0;
-      background-image: url("../img/profession-mobile@1x.jpg"); } }
+      background-image: url("../img/profession-mobile@1x.jpg");
+      background-size: cover; } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .pastime__item--profession {
       background-image: url("../img/profession-mobile@2x.jpg"); } }
@@ -1570,6 +1573,7 @@ a {
   @media (max-width: 1023px) {
     .pastime__item--creativity {
       background-image: url("../img/creativity-mobile@1x.jpg");
+      background-size: cover;
       padding-top: 0;
       padding-left: 0; } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
@@ -1599,6 +1603,7 @@ a {
   @media (max-width: 1023px) {
     .pastime__item--lead {
       background-image: url("../img/lead-mobile@1x.jpg");
+      background-size: cover;
       padding-top: 0;
       padding-left: 0; } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
@@ -1633,60 +1638,6 @@ a {
 
 .pastime__dot--activ {
   background-color: #ffc341; }
-
-.pastime__prev {
-  display: none; }
-  @media (max-width: 1023px) {
-    .pastime__prev {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      left: calc(50vw - 150px);
-      top: 20%;
-      width: 50px;
-      margin-top: -22px;
-      padding: 16px;
-      padding-top: 120px;
-      padding-bottom: 120px;
-      color: transparent;
-      font-weight: bold;
-      font-size: 18px;
-      -webkit-transition: 0.6s ease;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0; } }
-  @media (max-width: 767px) {
-    .pastime__prev {
-      left: 0; } }
-
-.pastime__next {
-  display: none; }
-  @media (max-width: 1023px) {
-    .pastime__next {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      right: calc(50vw - 150px);
-      top: 20%;
-      width: 50px;
-      margin-top: -22px;
-      padding: 16px;
-      padding-top: 120px;
-      padding-bottom: 120px;
-      color: transparent;
-      font-weight: bold;
-      font-size: 18px;
-      -webkit-transition: 0.6s ease;
-      transition: 0.6s ease;
-      border-radius: 3px 0 0 3px; } }
-  @media (max-width: 767px) {
-    .pastime__next {
-      right: 0; } }
-
-.pastime__prev:hover,
-.pastime__next:hover,
-.pastime__prev:focus,
-.pastime__next:focus {
-  color: #1fc0fc; }
 
 .gallery {
   width: 100%;
@@ -1787,6 +1738,9 @@ a {
   @media (max-width: 1023px) {
     .gallery__wrap p {
       color: rgba(72, 72, 72, 0.87); } }
+  @media all and (max-width: 1023px) and (-ms-high-contrast: none), (max-width: 1023px) and (-ms-high-contrast: active) {
+    .gallery__wrap p {
+      width: inherit; } }
   @media (max-width: 767px) {
     .gallery__wrap p {
       color: rgba(255, 255, 255, 0.87);
@@ -1899,6 +1853,7 @@ a {
     width: 146px;
     height: 300px;
     background-image: url("../img/bag@1x.jpg");
+    background-repeat: no-repeat;
     background-size: 146px 177px;
     z-index: -1; } }
   @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
@@ -2501,6 +2456,9 @@ a {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; } }
+  @media all and (max-width: 1023px) and (-ms-high-contrast: none), (max-width: 1023px) and (-ms-high-contrast: active) {
+    .details__wrap {
+      display: block; } }
   @media (max-width: 767px) {
     .details__wrap {
       min-width: 320px;
@@ -2857,6 +2815,10 @@ a {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; } }
+  @media all and (max-width: 1023px) and (-ms-high-contrast: none), (max-width: 1023px) and (-ms-high-contrast: active) {
+    .details__form-inner {
+      display: block;
+      width: 400px; } }
   @media (max-width: 767px) {
     .details__form-inner {
       width: 288px;
