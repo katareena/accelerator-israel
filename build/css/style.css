@@ -1952,7 +1952,10 @@ a {
       padding-top: 30px;
       padding-bottom: 17px;
       padding-right: 70px;
-      padding-left: 25px; } }
+      padding-left: 25px; }
+      .questions__item:active, .questions__item:focus {
+        -webkit-outline: none;
+        outline: none; } }
 
 .questions__item span {
   font-size: 17px;

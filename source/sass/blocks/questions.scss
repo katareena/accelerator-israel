@@ -152,6 +152,12 @@
     padding-bottom: 17px;
     padding-right: 70px;
     padding-left: 25px;
+
+    &:active,
+    &:focus {
+      -webkit-outline: none;
+      outline: none;
+    }
   }
 }
 
