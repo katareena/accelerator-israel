@@ -23,8 +23,9 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
-    background-image: none;
-    background-color: transparent;
+    padding-bottom: 20px;
+    background-size: cover;
+    background-position: center;
     min-height: auto;
   }
 
@@ -39,6 +40,7 @@
     padding-left: 0;
     padding-right: 0;
     position: relative;
+    padding-bottom: 0;
 
     background-image: url("../img/bg-gallery-mobile@1x.jpg");
     background-repeat: no-repeat;
@@ -101,7 +103,7 @@
   }
 
   @media (max-width: $tablet-width) {
-    color: rgba($text, 0.87);
+    // color: rgba($text, 0.87);
 
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       width: inherit;

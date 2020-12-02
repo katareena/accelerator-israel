@@ -208,6 +208,13 @@ a {
       height: 42px; } }
 
 .header__tel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -1661,8 +1668,9 @@ a {
       padding-left: 30px;
       padding-right: 30px;
       padding-top: 20px;
-      background-image: none;
-      background-color: transparent;
+      padding-bottom: 20px;
+      background-size: cover;
+      background-position: center;
       min-height: auto; } }
   @media (max-width: 767px) {
     .gallery {
@@ -1676,6 +1684,7 @@ a {
       padding-left: 0;
       padding-right: 0;
       position: relative;
+      padding-bottom: 0;
       background-image: url("../img/bg-gallery-mobile@1x.jpg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -1735,12 +1744,10 @@ a {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .gallery__wrap p {
       line-height: 1.71; } }
-  @media (max-width: 1023px) {
-    .gallery__wrap p {
-      color: rgba(72, 72, 72, 0.87); } }
-  @media all and (max-width: 1023px) and (-ms-high-contrast: none), (max-width: 1023px) and (-ms-high-contrast: active) {
-    .gallery__wrap p {
-      width: inherit; } }
+
+@media all and (max-width: 1023px) and (-ms-high-contrast: none), (max-width: 1023px) and (-ms-high-contrast: active) {
+  .gallery__wrap p {
+    width: inherit; } }
   @media (max-width: 767px) {
     .gallery__wrap p {
       color: rgba(255, 255, 255, 0.87);

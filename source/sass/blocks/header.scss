@@ -98,6 +98,8 @@
 }
 
 .header__tel {
+  display: flex;
+  flex-direction: column;
   order: 1;
   margin-right: 5px;
 
@@ -106,6 +108,8 @@
     margin-right: 1px;
   }
 }
+
+
 
 .header__callback {
   font-variant: small-caps;
