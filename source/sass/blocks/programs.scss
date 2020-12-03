@@ -130,11 +130,16 @@
     color: rgba($text, 0.4);
     letter-spacing: 1px;
 
-    width: 187px;
+    width: auto;
     height: 48px;
 
     padding-left: 52px;
     margin-right: 4px;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -148,6 +153,38 @@
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     background-image: none;
     color: $accent-decor-1;
+  }
+
+  @media (max-width: $mobile-width) {
+    color: $white;
+    -webkit-text-fill-color: $white;
+    -moz-text-fill-color: $white;
+    background-clip: border-box;
+
+    background-image: url("../img/rectangle.png");
+    background-repeat: no-repeat;
+    background-size: 228px auto;
+
+    font-size: 13px;
+    line-height: calc(19 / 16);
+    text-transform: uppercase;
+    font-weight: 500;
+    width: auto;
+    height: 48px;
+    border-radius: 40px;
+    border: none;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.programs__button:hover,
+.programs__button:focus {
+  @media (max-width: $mobile-width) {
+    outline: none;
   }
 }
 
@@ -173,6 +210,7 @@
   background-image: url("../img/yellow-general.svg");
 
   @media (max-width: $mobile-width) {
+    background-image: url("../img/white-general.svg");
     left: 10px;
     top: 7px;
   }
@@ -198,8 +236,7 @@
   background-image: url("../img/yellow-academic.svg");
 
   @media (max-width: $mobile-width) {
-    left: 10px;
-    top: 7px;
+    background-image: url("../img/white-academic.svg");
   }
 }
 
@@ -225,6 +262,7 @@
   background-image: url("../img/yellow-internships.svg");
 
   @media (max-width: $mobile-width) {
+    background-image: url("../img/white-internships.svg");
     left: 10px;
     top: 10px;
   }
@@ -252,6 +290,7 @@
   background-image: url("../img/yellow-volunteerism.svg");
 
   @media (max-width: $mobile-width) {
+    background-image: url("../img/white-volunteerism.svg");
     left: 10px;
     top: 7px;
   }
@@ -269,7 +308,7 @@
 
   @media (max-width: $mobile-width) {
     left: 10px;
-    top: 7px;
+    top: 10px;
   }
 }
 
@@ -277,8 +316,9 @@
   background-image: url("../img/yellow-religious.svg");
 
   @media (max-width: $mobile-width) {
+    background-image: url("../img/white-religious.svg");
     left: 10px;
-    top: 7px;
+    top: 10px;
   }
 }
 
@@ -369,6 +409,11 @@
     height: 48px;
     border-radius: 40px;
     border: none;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 }
 

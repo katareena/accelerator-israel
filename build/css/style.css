@@ -546,10 +546,14 @@ a {
     .programs__button {
       color: rgba(72, 72, 72, 0.4);
       letter-spacing: 1px;
-      width: 187px;
+      width: auto;
       height: 48px;
       padding-left: 52px;
       margin-right: 4px; } }
+  @media all and (max-width: 767px) and (-ms-high-contrast: none), (max-width: 767px) and (-ms-high-contrast: active) {
+    .programs__button {
+      display: table-cell;
+      vertical-align: middle; } }
 
 .programs__button:hover {
   background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
@@ -562,6 +566,32 @@ a {
     .programs__button:hover {
       background-image: none;
       color: #ffc341; } }
+  @media (max-width: 767px) {
+    .programs__button:hover {
+      color: #ffffff;
+      -webkit-text-fill-color: #ffffff;
+      -moz-text-fill-color: #ffffff;
+      background-clip: border-box;
+      background-image: url("../img/rectangle.png");
+      background-repeat: no-repeat;
+      background-size: 228px auto;
+      font-size: 13px;
+      line-height: calc(19 / 16);
+      text-transform: uppercase;
+      font-weight: 500;
+      width: auto;
+      height: 48px;
+      border-radius: 40px;
+      border: none; } }
+  @media all and (max-width: 767px) and (-ms-high-contrast: none), (max-width: 767px) and (-ms-high-contrast: active) {
+    .programs__button:hover {
+      display: table-cell;
+      vertical-align: middle; } }
+
+@media (max-width: 767px) {
+  .programs__button:hover,
+  .programs__button:focus {
+    outline: none; } }
 
 .programs__button--general::before {
   content: "";
@@ -583,6 +613,7 @@ a {
   background-image: url("../img/yellow-general.svg"); }
   @media (max-width: 767px) {
     .programs__button--general:hover::before {
+      background-image: url("../img/white-general.svg");
       left: 10px;
       top: 7px; } }
 
@@ -604,8 +635,7 @@ a {
   background-image: url("../img/yellow-academic.svg"); }
   @media (max-width: 767px) {
     .programs__button--academic:hover::before {
-      left: 10px;
-      top: 7px; } }
+      background-image: url("../img/white-academic.svg"); } }
 
 .programs__button--internships::before {
   content: "";
@@ -627,6 +657,7 @@ a {
   background-image: url("../img/yellow-internships.svg"); }
   @media (max-width: 767px) {
     .programs__button--internships:hover::before {
+      background-image: url("../img/white-internships.svg");
       left: 10px;
       top: 10px; } }
 
@@ -650,6 +681,7 @@ a {
   background-image: url("../img/yellow-volunteerism.svg"); }
   @media (max-width: 767px) {
     .programs__button--volunteerism:hover::before {
+      background-image: url("../img/white-volunteerism.svg");
       left: 10px;
       top: 7px; } }
 
@@ -665,14 +697,15 @@ a {
   @media (max-width: 767px) {
     .programs__button--religious::before {
       left: 10px;
-      top: 7px; } }
+      top: 10px; } }
 
 .programs__button--religious:hover::before {
   background-image: url("../img/yellow-religious.svg"); }
   @media (max-width: 767px) {
     .programs__button--religious:hover::before {
+      background-image: url("../img/white-religious.svg");
       left: 10px;
-      top: 7px; } }
+      top: 10px; } }
 
 .programs__box {
   width: 100vw;
@@ -759,6 +792,14 @@ a {
       height: 48px;
       border-radius: 40px;
       border: none; } }
+  @media all and (max-width: 767px) and (-ms-high-contrast: none), (max-width: 767px) and (-ms-high-contrast: active) {
+    .programs__button--select-general,
+    .programs__button--select-academic,
+    .programs__button--select-internships,
+    .programs__button--select-volunteerism,
+    .programs__button--select-religious {
+      display: table-cell;
+      vertical-align: middle; } }
 
 .programs__button--select-general::before {
   content: "";
