@@ -109,8 +109,6 @@
   }
 }
 
-
-
 .header__callback {
   font-variant: small-caps;
   order: 3;
@@ -123,8 +121,8 @@
   }
 }
 
-.header__tel:hover,
-.header__tel:focus {
+.header__tel a:hover,
+.header__tel a:focus {
   color: $accent-decor-1;
 }
 

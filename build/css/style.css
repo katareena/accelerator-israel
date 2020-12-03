@@ -238,8 +238,8 @@ a {
     .header__callback {
       margin-right: 3px; } }
 
-.header__tel:hover,
-.header__tel:focus {
+.header__tel a:hover,
+.header__tel a:focus {
   color: #ffc341; }
 
 .header__callback:hover,
