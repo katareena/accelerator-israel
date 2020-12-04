@@ -176,8 +176,15 @@
     margin-bottom: 16px;
     object-fit: cover;
 
-    display: flex; //устанавливается из slider-pastime.js
+    // display: flex; //устанавливается из slider-pastime.js
+    display: none;
     flex-shrink: 0;
+  }
+}
+
+.pastime__item--active {
+  @media (max-width: $tablet-width) {
+    display: flex;
   }
 }
 
@@ -238,7 +245,7 @@
   }
 
   @media (max-width: $tablet-width) {
-    display: flex;
+    // display: flex;
     margin-top: 0;
     padding-top: 0;
     background-image: url("../img/language-mobile@1x.jpg");

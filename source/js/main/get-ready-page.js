@@ -19,7 +19,7 @@
     if(window.innerWidth <= MAX_TABLET_WIDTH) {
       var gallery = document.querySelector('.pastime__inner');
       gallery.classList.add('pastime__inner--slider');
-    }
+      }
     });
   }
 

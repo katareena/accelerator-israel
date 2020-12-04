@@ -1506,11 +1506,15 @@ a {
     margin-bottom: 16px;
     -o-object-fit: cover;
        object-fit: cover;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -ms-flex-negative: 0;
         flex-shrink: 0; } }
+
+@media (max-width: 1023px) {
+  .pastime__item--active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
 
 .pastime__item--history {
   grid-column-start: 1;
@@ -1557,9 +1561,6 @@ a {
       background-image: url("../img/language-desktop@2x.png"); } }
   @media (max-width: 1023px) {
     .pastime__item--language {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
       margin-top: 0;
       padding-top: 0;
       background-image: url("../img/language-mobile@1x.jpg");

@@ -52,7 +52,7 @@
     if(window.innerWidth <= MAX_TABLET_WIDTH) {
       var gallery = document.querySelector('.pastime__inner');
       gallery.classList.add('pastime__inner--slider');
-    }
+      }
     });
   }
 
@@ -330,13 +330,13 @@
         slideIndex = slides.length
       }
       for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
+        slides[i].classList.remove('pastime__item--active');
       }
       for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(' pastime__dot--activ', '');
+        dots[i].classList.remove('pastime__dot--activ');
       }
-      slides[slideIndex - 1].style.display = 'flex';
-      dots[slideIndex - 1].className += ' pastime__dot--activ';
+      slides[slideIndex - 1].classList.add('pastime__item--active');
+      dots[slideIndex - 1].classList.add('pastime__dot--activ');
     }
   }
 
