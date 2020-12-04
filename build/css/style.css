@@ -1540,7 +1540,7 @@ a {
       background-image: url("../img/history-mobile@2x.jpg"); } }
 
 .pastime__item--history p {
-  width: 320px; }
+  max-width: 320px; }
   @media (max-width: 1023px) {
     .pastime__item--history p {
       width: auto; } }
@@ -1570,7 +1570,7 @@ a {
       background-image: url("../img/language-mobile@2x.jpg"); } }
 
 .pastime__item--language p {
-  width: 120px; }
+  max-width: 120px; }
   @media (max-width: 1023px) {
     .pastime__item--language p {
       width: auto; } }
@@ -1600,7 +1600,7 @@ a {
       background-image: url("../img/profession-mobile@2x.jpg"); } }
 
 .pastime__item--profession p {
-  width: 320px;
+  max-width: 320px;
   letter-spacing: -0.1px; }
   @media (max-width: 1023px) {
     .pastime__item--profession p {
@@ -1630,7 +1630,7 @@ a {
       background-image: url("../img/creativity-mobile@2x.jpg"); } }
 
 .pastime__item--creativity p {
-  width: 360px;
+  max-width: 360px;
   letter-spacing: -0.15px; }
   @media (max-width: 1023px) {
     .pastime__item--creativity p {
